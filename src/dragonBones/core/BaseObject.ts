@@ -20,6 +20,7 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+import { Map } from './DragonBones';
 /**
  * - The BaseObject is the base class for all objects in the DragonBones framework.
  * All BaseObject instances are cached to the object pool to reduce the performance consumption

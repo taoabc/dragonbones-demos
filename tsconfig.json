@@ -4,7 +4,6 @@
     "strict": true,
 		"watch": false,
 		"module": "commonjs",
-    "moduleResolution": "node",
     "noImplicitAny": true,
     "importHelpers": false,
 		"sourceMap": false,
@@ -14,14 +13,9 @@
 		"noUnusedLocals": true,
 		"experimentalDecorators": true,
 		"outDir": "dist",
-		"lib": [
-			"es5",
-			"dom",
-			"es2015.promise"
-		]
   },
   "include": [
-    "src/**/*"
+    "src/dragonBones/animation/animation.ts"
   ],
 	"exclude": [
 		"node_modules",
