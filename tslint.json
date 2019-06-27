@@ -1,6 +1,6 @@
 {
   "defaultSeverity": "warning",
-  "extends": [
+  "//extends": [
     "tslint:recommended"
   ],
   "linterOptions": {

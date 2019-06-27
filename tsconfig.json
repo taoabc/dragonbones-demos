@@ -11,6 +11,7 @@
     "stripInternal": true,
 		"alwaysStrict": true,
 		"noUnusedLocals": true,
+		"esModuleInterop": true,
 		"experimentalDecorators": true,
 		"outDir": "dist",
   },
