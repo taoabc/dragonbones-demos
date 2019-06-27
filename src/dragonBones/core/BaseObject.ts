@@ -22,7 +22,8 @@
  */
 /**
  * - The BaseObject is the base class for all objects in the DragonBones framework.
- * All BaseObject instances are cached to the object pool to reduce the performance consumption of frequent requests for memory or memory recovery.
+ * All BaseObject instances are cached to the object pool to reduce the performance consumption
+ * of frequent requests for memory or memory recovery.
  * @version DragonBones 4.5
  * @language en_US
  */
