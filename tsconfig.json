@@ -1,0 +1,30 @@
+{
+	"compilerOptions": {
+    "target": "es2017",
+    "strict": true,
+		"watch": false,
+		"module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "importHelpers": false,
+		"sourceMap": false,
+		"declaration": true,
+    "stripInternal": true,
+		"alwaysStrict": true,
+		"noUnusedLocals": true,
+		"experimentalDecorators": true,
+		"outDir": "dist",
+		"lib": [
+			"es5",
+			"dom",
+			"es2015.promise"
+		]
+  },
+  "include": [
+    "src/**/*"
+  ],
+	"exclude": [
+		"node_modules",
+		"out"
+	]
+}
