@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc",
     "build-origindbs": "tsc -p src/origin-dbs/",
+    "build-originphaser": "tsc -p src/origin-phaser/",
     "build-demos": "tsc -p Demos/",
     "run-demos": "serve Demos/",
     "lint-fix": "tslint -p . --fix"

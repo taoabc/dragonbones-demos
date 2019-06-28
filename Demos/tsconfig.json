@@ -1,21 +1,22 @@
 {
-  "compilerOptions": {
-    "target": "esnext",
-    "strict": true,
-    "watch": false,
-    "module": "none",
-    "noImplicitAny": true,
-    "importHelpers": false,
-    "sourceMap": false,
-    "declaration": true,
-    "stripInternal": true,
-    "alwaysStrict": true,
-    "noUnusedLocals": true,
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "outDir": "dist/"
-  },
-  "include": [
-    "src/**/*"
-  ]
-}
+    "compilerOptions": {
+      "target": "esnext",
+      "strict": true,
+      "watch": false,
+      "module": "none",
+      "noImplicitAny": true,
+      "importHelpers": false,
+      "sourceMap": false,
+      "declaration": true,
+      "stripInternal": true,
+      "alwaysStrict": true,
+      "noUnusedLocals": true,
+      "esModuleInterop": true,
+      "experimentalDecorators": true,
+      "outDir": "dist/"
+    },
+    "include": [
+      "src/**/*"
+    ]
+  }
+  
