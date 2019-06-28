@@ -1,5 +1,9 @@
 # DragonBones for Phaser 3 Runtime
 
+NEXT step:
+  1. change dragonBones runtime to module
+  2. push it to npm
+
 This is DragonBones's npm version for phaser 3 only.
 
 ## To learn more about
