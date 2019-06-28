@@ -14,8 +14,11 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "outFile": "../../demos/libs/origin-phaser.js",
+    "types": ["phaser"]
   },
   "files": [
+    "../../dist/origin-dragonbones.d.ts",
+
     "./util/EventDispatcher.ts",
 		"./util/SkewComponent.ts",
 		"./util/TransformMatrix.ts",
