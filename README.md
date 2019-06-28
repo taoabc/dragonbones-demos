@@ -1,6 +1,6 @@
 # DragonBones for Phaser 3 Runtime
 
-This is DragonBones's npm version for phaser3 only, contains phaser 3 internal.
+This is DragonBones's npm version for phaser 3 only.
 
 ## To learn more about
 * [DragonBones offical website](http://www.dragonbones.com/)
