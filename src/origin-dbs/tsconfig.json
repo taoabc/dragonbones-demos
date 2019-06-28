@@ -13,7 +13,7 @@
     "noUnusedLocals": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "outFile": "../../dist/origin-dragonbones.js",
+    "outFile": "../../Demos/libs/origin-dragonbones.js",
   },
   "files": [
     "./core/DragonBones.ts",
@@ -36,7 +36,7 @@
 		"./model/AnimationData.ts",
 		"./model/AnimationConfig.ts",
 		"./model/TextureAtlasData.ts",
-		
+
 		"./armature/IArmatureProxy.ts",
 		"./armature/Armature.ts",
 		"./armature/TransformObject.ts",
@@ -58,7 +58,7 @@
 		"./parser/DataParser.ts",
 		"./parser/ObjectDataParser.ts",
 		"./parser/BinaryDataParser.ts",
-		
+
 		"./factory/BaseFactory.ts"
   ]
 }

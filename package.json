@@ -17,7 +17,8 @@
   "devDependencies": {
     "serve": "^11.0.2",
     "tslint": "^5.18.0",
-    "typescript": "^3.5.2"
+    "typescript": "^3.5.2",
+    "webpack": "^4.35.0"
   },
   "dependencies": {
     "phaser": "^3.18.1"

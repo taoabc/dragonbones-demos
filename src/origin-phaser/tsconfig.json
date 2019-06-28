@@ -17,7 +17,7 @@
     "types": ["phaser"]
   },
   "files": [
-    "../../dist/origin-dragonbones.d.ts",
+    "../../demos/libs/origin-dragonbones.d.ts",
 
     "./util/EventDispatcher.ts",
 		"./util/SkewComponent.ts",
