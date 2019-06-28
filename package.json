@@ -5,12 +5,16 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
+    "build-origindbs": "tsc -p src/origin-dbs/",
+    "build-demos": "tsc -p Demos/",
+    "run-demos": "serve Demos/",
     "lint-fix": "tslint -p . --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "serve": "^11.0.2",
     "tslint": "^5.18.0",
     "typescript": "^3.5.2"
   },
