@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "webpack --config build/webpack.dev.js",
     "build-origindbs": "tsc -p src/origin-dbs/",
     "build-originphaser": "tsc -p src/origin-phaser/",
     "build-demos": "tsc -p Demos/",
@@ -15,10 +15,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-loader": "^8.0.6",
     "serve": "^11.0.2",
+    "ts-loader": "^6.0.4",
     "tslint": "^5.18.0",
     "typescript": "^3.5.2",
-    "webpack": "^4.35.0"
+    "webpack": "^4.35.0",
+    "webpack-cli": "^3.3.5"
   },
   "dependencies": {
     "phaser": "^3.18.1"

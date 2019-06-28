@@ -3,7 +3,7 @@ class ReplaceSlotDisplay extends BaseDemo {
 
     private _leftWeaponIndex: number = 0;
     private _rightWeaponIndex: number = 0;
-    private _factory: dragonBones.phaser.Factory = null;
+    private _factory: dragonBonesPhaser.Factory = null;
     private _armatureDisplay: dragonBones.phaser.display.ArmatureDisplay;
     private _logoText: Phaser.GameObjects.Text;
 
@@ -75,7 +75,7 @@ class ReplaceSlotDisplay extends BaseDemo {
             else {
                 if (!this._logoText) {
                     // mix skew component into Text class (also if you want to use some customized display object you must mix skew component into it, too)
-                    dragonBones.phaser.util.extendSkew(Phaser.GameObjects.Text);
+                    dragonBonesPhaser.util.extendSkew(Phaser.GameObjects.Text);
 
                     const style = { fontSize: 30, color: "#FFFFFF", align: "center" };
                     this._logoText = this.add.text(0.0, 0.0, "Core Element", style);

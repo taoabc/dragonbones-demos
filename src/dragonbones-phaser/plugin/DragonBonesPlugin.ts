@@ -45,7 +45,7 @@ export class DragonBonesScenePlugin extends Phaser.Plugins.ScenePlugin {
         const display = this.factory.buildArmatureDisplay(armature, dragonBones, skinName, atlasTextureName, textureScale);
         this.systems.displayList.add(display);
         // use db.clock instead, if here we just use this.systems.updateList.add(display), that will cause the db event is dispatched with 1 or more frames delay
-        this._dbInst.clock.add(armature);
+        this._dbInst.clock.add(display.armature);
 
         return display;
     }

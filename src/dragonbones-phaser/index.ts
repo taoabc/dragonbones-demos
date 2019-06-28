@@ -1,5 +1,9 @@
-import { ArmatureDisplay } from './display/ArmatureDisplay';
+import { DragonBonesScenePlugin } from './plugin/DragonBonesPlugin';
+import { extendSkew } from './util/SkewComponent';
+
+const util = { extendSkew }
 
 export {
-  ArmatureDisplay
+  DragonBonesScenePlugin,
+  util
 };
