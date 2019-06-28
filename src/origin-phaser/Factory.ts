@@ -1,5 +1,5 @@
 namespace dragonBones.phaser {
-    export class Factory extends dragonBones.BaseFactory {
+    export class Factory extends BaseFactory {
         protected _scene: Phaser.Scene;
         protected _dragonBones: DragonBones;
 
