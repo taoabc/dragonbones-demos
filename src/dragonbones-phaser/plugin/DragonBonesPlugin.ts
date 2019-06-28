@@ -1,8 +1,16 @@
+import { Factory } from '../Factory';
+import { TextureTintPipeline } from '../pipeline/TextureTintPipeline';
+import { EventDispatcher } from '../util/EventDispatcher';
+import { SlotImage } from '../display/SlotImage';
+import { SlotSprite } from '../display/SlotSprite';
+import { ArmatureDisplay } from '../display/ArmatureDisplay';
+import { DragonBonesFile } from './DragonBonesFile';
+
 export class DragonBonesScenePlugin extends Phaser.Plugins.ScenePlugin {
 
     get factory(): Factory {  // lazy instancing
         if (!this._factory) {
-            this._dbInst = new dragonBones.DragonBones(new util.EventDispatcher());
+            this._dbInst = new dragonBones.DragonBones(new EventDispatcher());
             this._factory = new Factory(this._dbInst, this.scene);
         }
 
@@ -22,7 +30,7 @@ export class DragonBonesScenePlugin extends Phaser.Plugins.ScenePlugin {
         if (this.game.config.renderType === Phaser.WEBGL) {
             const renderer = this.game.renderer as Phaser.Renderer.WebGL.WebGLRenderer;
             if (!renderer.hasPipeline('PhaserTextureTintPipeline')) {
-                renderer.addPipeline('PhaserTextureTintPipeline', new pipeline.TextureTintPipeline({ game, renderer }));
+                renderer.addPipeline('PhaserTextureTintPipeline', new TextureTintPipeline({ game, renderer }));
             }
         }
 
@@ -33,16 +41,16 @@ export class DragonBonesScenePlugin extends Phaser.Plugins.ScenePlugin {
         pluginManager.registerFileType('dragonbone', DragonBoneFileRegisterHandler, scene);
     }
 
-    public createArmature(armature: string, dragonBones?: string, skinName?: string, atlasTextureName?: string, textureScale = 1.0): display.ArmatureDisplay {
+    public createArmature(armature: string, dragonBones?: string, skinName?: string, atlasTextureName?: string, textureScale = 1.0): ArmatureDisplay {
         const display = this.factory.buildArmatureDisplay(armature, dragonBones, skinName, atlasTextureName, textureScale);
         this.systems.displayList.add(display);
         // use db.clock instead, if here we just use this.systems.updateList.add(display), that will cause the db event is dispatched with 1 or more frames delay
-        this._dbInst.clock.add(display.armature);
+        this._dbInst.clock.add(armature);
 
         return display;
     }
 
-    public createDragonBones(dragonBonesName: string, textureScale = 1.0): DragonBonesData {
+    public createDragonBones(dragonBonesName: string, textureScale = 1.0): dragonBones.DragonBonesData {
         return this.factory.buildDragonBonesData(dragonBonesName, textureScale);
     }
 
@@ -50,8 +58,8 @@ export class DragonBonesScenePlugin extends Phaser.Plugins.ScenePlugin {
     * Slot has a default display, usually it is a transparent image, here you could create a display whatever you want as the default one which -
     * has both skewX / skewY attributes and use "PhaserTextureTintPipeline" to render itself, or simply just use SlotImage or SlotSprite.
     */
-    public createSlotDisplayPlaceholder(): display.SlotImage | display.SlotSprite {
-        return new display.SlotImage(this.scene, 0, 0);
+    public createSlotDisplayPlaceholder(): SlotImage | SlotSprite {
+        return new SlotImage(this.scene, 0, 0);
     }
 
     public boot(): void {
@@ -90,11 +98,11 @@ export class DragonBonesScenePlugin extends Phaser.Plugins.ScenePlugin {
     }
 }
 
-const CreateDragonBonesRegisterHandler = function (dragonBonesName: string, textureScale = 1.0): DragonBonesData {
+const CreateDragonBonesRegisterHandler = function (dragonBonesName: string, textureScale = 1.0): dragonBones.DragonBonesData {
     return this.scene.dragonbone.createDragonBones(dragonBonesName, textureScale);
 };
 
-const CreateArmatureRegisterHandler = function (armature: string, dragonBones?: string, skinName?: string, atlasTextureName?: string): display.ArmatureDisplay {
+const CreateArmatureRegisterHandler = function (armature: string, dragonBones?: string, skinName?: string, atlasTextureName?: string): ArmatureDisplay {
     return this.scene.dragonbone.createArmature(armature, dragonBones, skinName, atlasTextureName);
 };
 

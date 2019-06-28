@@ -1,3 +1,6 @@
+import { SlotImage } from './SlotImage';
+import { SlotSprite } from './SlotSprite';
+import { DisplayContainer } from './DisplayContainer';
 export class Slot extends dragonBones.Slot {
     public static toString(): string {
         return '[class dragonBones.PhaserSlot]';
@@ -60,31 +63,31 @@ export class Slot extends dragonBones.Slot {
     protected _updateBlendMode(): void {
         let mode = Phaser.BlendModes.NORMAL;
         switch (this._blendMode) {
-            case BlendMode.Normal:
+            case dragonBones.BlendMode.Normal:
                 mode = Phaser.BlendModes.NORMAL;
                 break;
-            case BlendMode.Add:
+            case dragonBones.BlendMode.Add:
                 mode = Phaser.BlendModes.ADD;
                 break;
-            case BlendMode.Darken:
+            case dragonBones.BlendMode.Darken:
                 mode = Phaser.BlendModes.DARKEN;
                 break;
-            case BlendMode.Difference:
+            case dragonBones.BlendMode.Difference:
                 mode = Phaser.BlendModes.DIFFERENCE;
                 break;
-            case BlendMode.HardLight:
+            case dragonBones.BlendMode.HardLight:
                 mode = Phaser.BlendModes.HARD_LIGHT;
                 break;
-            case BlendMode.Lighten:
+            case dragonBones.BlendMode.Lighten:
                 mode = Phaser.BlendModes.LIGHTEN;
                 break;
-            case BlendMode.Multiply:
+            case dragonBones.BlendMode.Multiply:
                 mode = Phaser.BlendModes.MULTIPLY;
                 break;
-            case BlendMode.Overlay:
+            case dragonBones.BlendMode.Overlay:
                 mode = Phaser.BlendModes.OVERLAY;
                 break;
-            case BlendMode.Screen:
+            case dragonBones.BlendMode.Screen:
                 mode = Phaser.BlendModes.SCREEN;
                 break;
             default:
@@ -112,21 +115,21 @@ export class Slot extends dragonBones.Slot {
     protected _updateFrame(): void {
         if (this._renderDisplay instanceof DisplayContainer) { return; }
 
-        let currentTextureData = this._textureData as TextureData;
+        let currentTextureData = this._textureData as dragonBones.TextureData;
 
         if (this._displayIndex >= 0 && this._display !== null && currentTextureData !== null) {
-            let currentTextureAtlasData = currentTextureData.parent as TextureAtlasData;
+            let currentTextureAtlasData = currentTextureData.parent as dragonBones.TextureAtlasData;
             if (this.armature.replacedTexture !== null) { // Update replaced texture atlas.
                 if (this.armature._replaceTextureAtlasData === null) {
-                    currentTextureAtlasData = BaseObject.borrowObject(TextureAtlasData);
+                    currentTextureAtlasData = dragonBones.BaseObject.borrowObject(dragonBones.TextureAtlasData);
                     currentTextureAtlasData.copyFrom(currentTextureData.parent);
                     currentTextureAtlasData.renderTexture = this.armature.replacedTexture;
                     this.armature._replaceTextureAtlasData = currentTextureAtlasData;
                 } else {
-                    currentTextureAtlasData = this.armature._replaceTextureAtlasData as TextureAtlasData;
+                    currentTextureAtlasData = this.armature._replaceTextureAtlasData as dragonBones.TextureAtlasData;
                 }
 
-                currentTextureData = currentTextureAtlasData.getTexture(currentTextureData.name) as TextureData;
+                currentTextureData = currentTextureAtlasData.getTexture(currentTextureData.name) as dragonBones.TextureData;
             }
 
             const frame = currentTextureData.renderTexture;

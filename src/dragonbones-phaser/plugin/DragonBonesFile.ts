@@ -1,3 +1,5 @@
+import { FileTypes } from './FileTypes';
+
 export class DragonBonesFile extends Phaser.Loader.MultiFile {
     constructor(loader: Phaser.Loader.LoaderPlugin,
         key: string | object,

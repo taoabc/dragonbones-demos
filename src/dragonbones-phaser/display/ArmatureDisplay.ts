@@ -1,12 +1,14 @@
-export class ArmatureDisplay extends DisplayContainer implements IArmatureProxy {
+import { DisplayContainer } from './DisplayContainer';
+
+export class ArmatureDisplay extends DisplayContainer implements dragonBones.IArmatureProxy {
     public debugDraw = false;
-    private _armature: Armature;
+    private _armature: dragonBones.Armature;
 
     constructor(scene: Phaser.Scene) {
         super(scene);
     }
 
-    public dbInit(armature: Armature): void {
+    public dbInit(armature: dragonBones.Armature): void {
         this._armature = armature;
     }
 
@@ -35,23 +37,23 @@ export class ArmatureDisplay extends DisplayContainer implements IArmatureProxy 
         this.dispose(true);
     }
 
-    public dispatchDBEvent(type: EventStringType, eventObject: EventObject): void {
+    public dispatchDBEvent(type: dragonBones.EventStringType, eventObject: dragonBones.EventObject): void {
         this.emit(type, eventObject);
     }
 
-    public hasDBEventListener(type: EventStringType): boolean {
+    public hasDBEventListener(type: dragonBones.EventStringType): boolean {
         return this.listenerCount(type) > 0;
     }
 
-    public addDBEventListener(type: EventStringType, listener: (event: EventObject) => void, scope?: any): void {
+    public addDBEventListener(type: dragonBones.EventStringType, listener: (event: dragonBones.EventObject) => void, scope?: any): void {
         this.on(type, listener, scope);
     }
 
-    public removeDBEventListener(type: EventStringType, listener: (event: EventObject) => void, scope?: any): void {
+    public removeDBEventListener(type: dragonBones.EventStringType, listener: (event: dragonBones.EventObject) => void, scope?: any): void {
         this.off(type, listener, scope);
     }
 
-    get armature(): Armature {
+    get armature(): dragonBones.Armature {
         return this._armature;
     }
 

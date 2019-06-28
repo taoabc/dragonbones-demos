@@ -1,3 +1,5 @@
+import { extendSkew } from '../util/SkewComponent';
+
 export class SlotSprite extends Phaser.GameObjects.Sprite {
     constructor(scene: Phaser.Scene, x: number, y: number, texture?: string, frame?: string | number) {
         super(scene, x, y, texture, frame);
@@ -5,4 +7,4 @@ export class SlotSprite extends Phaser.GameObjects.Sprite {
     }
 }
 
-util.extendSkew(SlotSprite);  // skew mixin
+extendSkew(SlotSprite);  // skew mixin

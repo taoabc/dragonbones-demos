@@ -1,13 +1,14 @@
+import { TransformMatrix } from '../util/TransformMatrix';
 export class TextureTintPipeline extends Phaser.Renderer.WebGL.Pipelines.TextureTintPipeline {
-    private _tempMatrix1: util.TransformMatrix;
-    private _tempMatrix2: util.TransformMatrix;
-    private _tempMatrix3: util.TransformMatrix;
+    private _tempMatrix1: TransformMatrix;
+    private _tempMatrix2: TransformMatrix;
+    private _tempMatrix3: TransformMatrix;
 
     constructor(config: any) {
         super(config);
-        this._tempMatrix1 = new util.TransformMatrix();
-        this._tempMatrix2 = new util.TransformMatrix();
-        this._tempMatrix3 = new util.TransformMatrix();
+        this._tempMatrix1 = new TransformMatrix();
+        this._tempMatrix2 = new TransformMatrix();
+        this._tempMatrix3 = new TransformMatrix();
     }
 
     public batchSprite(sprite: Phaser.GameObjects.Image | Phaser.GameObjects.Sprite, camera: Phaser.Cameras.Scene2D.Camera, parentTransformMatrix: Phaser.GameObjects.Components.TransformMatrix): void {

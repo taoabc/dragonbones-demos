@@ -1,12 +1,14 @@
 // this class will be refactored due to official Container will be removed soon.
+import { TransformMatrix } from '../util/TransformMatrix';
+
 export class DisplayContainer extends Phaser.GameObjects.Container {
     private _skewX = 0;
     private _skewY = 0;
-    private tempTransformMatrix: util.TransformMatrix;
+    private tempTransformMatrix: TransformMatrix;
 
     constructor(scene: Phaser.Scene, x?: number, y?: number, children?: Phaser.GameObjects.GameObject[]) {
         super(scene, x, y, children);
-        this.tempTransformMatrix = new util.TransformMatrix();
+        this.tempTransformMatrix = new TransformMatrix();
     }
 
     public pointToContainer(source: Phaser.Math.Vector2 | Phaser.Geom.Point | { x?: number, y?: number },

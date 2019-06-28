@@ -38,7 +38,7 @@ export class TextureAtlasData extends dragonBones.TextureAtlasData {
     private _renderTexture: Phaser.Textures.Texture = null;
 
     public createTexture(): TextureData {
-        return BaseObject.borrowObject(TextureData);
+        return dragonBones.BaseObject.borrowObject(TextureData);
     }
 
     protected _onClear(): void {
