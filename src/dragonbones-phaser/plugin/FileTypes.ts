@@ -1,3 +1,5 @@
+import Phaser from 'phaser';
+
 type FileTypeClass = new (...args: any[]) => Phaser.Loader.File;
 
 export const FileTypes = {

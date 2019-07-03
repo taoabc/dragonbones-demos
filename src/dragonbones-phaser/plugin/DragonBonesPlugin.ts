@@ -1,3 +1,5 @@
+import * as dragonBones from '../../dragonBones';
+
 import { Factory } from '../Factory';
 import { TextureTintPipeline } from '../pipeline/TextureTintPipeline';
 import { EventDispatcher } from '../util/EventDispatcher';

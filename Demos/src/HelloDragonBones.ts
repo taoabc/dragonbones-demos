@@ -1,4 +1,5 @@
-class HelloDragonBones extends BaseDemo {
+import { BaseDemo } from './BaseDemo';
+export class HelloDragonBones extends BaseDemo {
 
     public constructor() {
         super("HelloDragonBones");

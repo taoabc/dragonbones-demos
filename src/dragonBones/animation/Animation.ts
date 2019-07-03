@@ -21,7 +21,12 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import { BaseObject } from '../core/BaseObject';
+import { BaseObject, Map } from '../core/BaseObject';
+import { AnimationData } from '../model/AnimationData';
+import { AnimationConfig } from '../model/AnimationConfig';
+import { AnimationState, BlendState } from './AnimationState';
+import { Armature } from '../armature/Armature';
+import { AnimationFadeOutMode } from '../core/DragonBones';
 
 /**
  * - The animation player is used to play the animation data and manage the animation states.

@@ -1,4 +1,5 @@
-class AnimationBase extends BaseDemo {
+import { BaseDemo } from './BaseDemo';
+export class AnimationBase extends BaseDemo {
     private _armatureDisplay: dragonBones.phaser.display.ArmatureDisplay;
 
     public constructor() {

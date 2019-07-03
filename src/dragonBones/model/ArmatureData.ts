@@ -20,6 +20,16 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+import { BaseObject, Map } from  '../core/BaseObject';
+import { ArmatureType, BoneType, BlendMode } from '../core/DragonBones';
+import { Rectangle, Matrix, ColorTransform, Transform } from '../geom';
+import { ActionData, UserData } from './UserData';
+import { SkinData } from './SkinData';
+import { CanvasData } from './CanvasData';
+import { AnimationData } from './AnimationData';
+import { DragonBonesData } from './DragonBonesData';
+import { ConstraintData } from './ConstraintData';
+import { GeometryData, MeshDisplayData } from './DisplayData';
 /**
  * - The armature data.
  * @version DragonBones 3.0

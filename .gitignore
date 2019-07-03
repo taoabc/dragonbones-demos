@@ -3,6 +3,10 @@
 dist/
 
 Demos/libs/
+Demos/dist/
+
+Demos-umd/dist/
+Demos-umd/libs/
 
 # Logs
 logs

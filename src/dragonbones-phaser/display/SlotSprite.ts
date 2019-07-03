@@ -1,3 +1,4 @@
+import Phaser from 'phaser';
 import { extendSkew } from '../util/SkewComponent';
 
 export class SlotSprite extends Phaser.GameObjects.Sprite {

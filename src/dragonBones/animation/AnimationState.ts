@@ -20,7 +20,16 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-import { BaseObject } from '../core/BaseObject';
+import { BaseObject, Map } from '../core/BaseObject';
+import { AnimationData, TimelineData, AnimationTimelineData } from '../model/AnimationData';
+import { AnimationBlendType, TimelineType, BoneType } from '../core/DragonBones';
+import { ActionTimelineState, ZOrderTimelineState, AnimationProgressTimelineState, AnimationWeightTimelineState, AnimationParametersTimelineState, IKConstraintTimelineState, BoneAllTimelineState, BoneTranslateTimelineState, BoneRotateTimelineState, BoneScaleTimelineState, AlphaTimelineState, SurfaceTimelineState, SlotDisplayTimelineState, SlotZIndexTimelineState, SlotColorTimelineState, DeformTimelineState } from './TimelineState';
+import { TimelineState } from './BaseTimelineState';
+import { Armature } from '../armature/Armature';
+import { AnimationConfig } from '../model/AnimationConfig';
+import { Bone } from '../armature/Bone';
+import { Slot } from '../armature/Slot';
+import { EventObject } from '../event/EventObject';
 /**
  * - The animation state is generated when the animation data is played.
  * @see dragonBones.Animation

@@ -1,4 +1,5 @@
 // this class will be refactored due to official Container will be removed soon.
+import Phaser from 'phaser';
 import { TransformMatrix } from '../util/TransformMatrix';
 
 export class DisplayContainer extends Phaser.GameObjects.Container {

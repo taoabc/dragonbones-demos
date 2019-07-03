@@ -1,3 +1,5 @@
+import * as dragonBones from '../../dragonBones';
+
 export class EventDispatcher extends Phaser.Events.EventEmitter implements dragonBones.IEventDispatcher {
     public hasDBEventListener(type: dragonBones.EventStringType): boolean {
         return this.listenerCount(type) > 0;

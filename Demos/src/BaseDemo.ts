@@ -1,8 +1,9 @@
 
-class BaseDemo extends Phaser.Scene {
+import Phaser from 'Phaser';
+export class BaseDemo extends Phaser.Scene {
 
     private static BACKGROUND_URL: string = "resource/background.png";
-    
+
     preload(): void {
         this.load.image(BaseDemo.BACKGROUND_URL, BaseDemo.BACKGROUND_URL);
     }

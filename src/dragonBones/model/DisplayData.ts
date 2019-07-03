@@ -20,6 +20,16 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+import { BaseObject } from '../core/BaseObject';
+import { DragonBonesData } from './DragonBonesData';
+import { DisplayType } from '../core/DragonBones';
+import { SkinData } from './SkinData';
+import { Transform, Point } from '../geom';
+import { TextureData } from './TextureAtlasData';
+import { ActionData } from './UserData';
+import { ArmatureData, BoneData } from './ArmatureData';
+import { BoundingBoxData } from './BoundingBoxData';
+
 /**
  * @private
  */

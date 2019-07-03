@@ -20,6 +20,11 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+import { Matrix, Transform } from '../geom';
+import { Bone } from './Bone';
+import { Armature } from './Armature';
+import { BoneType, BinaryOffset } from '../core/DragonBones';
+import { SurfaceData } from '../model/ArmatureData';
 /**
  * @internal
  */

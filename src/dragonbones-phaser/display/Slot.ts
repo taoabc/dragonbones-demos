@@ -1,3 +1,4 @@
+import * as dragonBones from '../../dragonBones';
 import { SlotImage } from './SlotImage';
 import { SlotSprite } from './SlotSprite';
 import { DisplayContainer } from './DisplayContainer';

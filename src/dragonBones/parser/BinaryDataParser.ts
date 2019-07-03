@@ -20,6 +20,13 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+import { ObjectDataParser } from './ObjectDataParser';
+import { DragonBonesData } from '../model';
+import { AnimationData, TimelineData, AnimationTimelineData } from '../model/AnimationData';
+import { BaseObject } from '../core/BaseObject';
+import { DataParser } from './DataParser';
+import { TimelineType, AnimationBlendType, BinaryOffset } from '../core/DragonBones';
+import { GeometryData, WeightData } from '../model/DisplayData';
 /**
  * @private
  */

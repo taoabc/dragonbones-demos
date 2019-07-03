@@ -1,3 +1,4 @@
+import * as dragonBones from '../../dragonBones';
 import { DisplayContainer } from './DisplayContainer';
 
 export class ArmatureDisplay extends DisplayContainer implements dragonBones.IArmatureProxy {

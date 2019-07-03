@@ -20,6 +20,9 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+import { BaseObject } from '../core/BaseObject';
+import { Armature } from './Armature';
+import { Matrix, Transform, Point } from '../geom';
 /**
  * - The base class of the transform object.
  * @see dragonBones.Transform

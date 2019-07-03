@@ -1,3 +1,5 @@
+import Phaser from 'phaser';
+
 export class TransformMatrix extends Phaser.GameObjects.Components.TransformMatrix {
     constructor(a?: number, b?: number, c?: number, d?: number, tx?: number, ty?: number) {
         super(a, b, c, d, tx, ty);

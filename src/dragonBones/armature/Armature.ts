@@ -20,6 +20,19 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+import { BaseObject } from '../core/BaseObject';
+import { IAnimatable } from '../animation/IAnimatable';
+import { ArmatureData } from '../model';
+import { IArmatureProxy } from './IArmatureProxy';
+import { IEventDispatcher } from '../event/IEventDispatcher';
+import { WorldClock } from '../animation/WorldClock';
+import { Slot } from './slot';
+import { Constraint } from './Constraint';
+import { TextureAtlasData } from '../model';
+import { DragonBones, ActionType } from '../core/DragonBones';
+import { Bone } from './Bone';
+import { EventObject } from '../event/EventObject';
+import { Animation } from '../animation/Animation';
 /**
  * - Armature is the core of the skeleton animation system.
  * @see dragonBones.ArmatureData

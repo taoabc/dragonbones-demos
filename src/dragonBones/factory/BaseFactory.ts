@@ -20,6 +20,25 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+import { WorldClock } from '../animation/WorldClock';
+import { DragonBones, DisplayType, BoneType, ConstraintType } from '../core/DragonBones';
+import { ObjectDataParser } from '../parser/ObjectDataParser';
+import { BinaryDataParser } from '../parser/BinaryDataParser';
+import { DragonBonesData, ArmatureData, DisplayData } from '../model';
+import { TextureAtlasData, TextureData } from '../model/TextureAtlasData';
+import { DataParser } from '../parser/DataParser';
+import { Armature } from '../armature/Armature';
+import { Slot } from '../armature/Slot';
+import { SkinData } from '../model/SkinData';
+import { AnimationData } from '../model/AnimationData';
+import { BaseObject } from '../core/BaseObject';
+import { Bone } from '../armature/Bone';
+import { Surface } from '../armature/Surface';
+import { IKConstraint, PathConstraint } from '../armature/Constraint';
+import { ArmatureDisplayData, ImageDisplayData, MeshDisplayData } from '../model/DisplayData';
+import { EventObject } from '../event/EventObject';
+import { SlotData } from '../model/ArmatureData';
+import { Map } from '../core/BaseObject';
 /**
  * - Base class for the factory that create the armatures. (Typically only one global factory instance is required)
  * The factory instance create armatures by parsed and added DragonBonesData instances and TextureAtlasData instances.

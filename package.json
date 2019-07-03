@@ -7,8 +7,9 @@
     "build": "webpack --config build/webpack.dev.js",
     "build-origindbs": "tsc -p src/origin-dbs/",
     "build-originphaser": "tsc -p src/origin-phaser/",
-    "build-demos": "tsc -p Demos/",
-    "run-demos": "serve Demos/",
+    "build-demos": "webpack --config Demos/build/webpack.dev.js",
+    "demos": "webpack-dev-server --config Demos/build/webpack.dev.js --progress --colors",
+    "demos-umd": "tsc -p Demos-umd/ & serve Demos-umd",
     "lint-fix": "tslint -p . --fix"
   },
   "keywords": [],
@@ -18,12 +19,15 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "babel-loader": "^8.0.6",
+    "copy-webpack-plugin": "^5.0.3",
+    "html-webpack-plugin": "^3.2.0",
     "serve": "^11.0.2",
     "ts-loader": "^6.0.4",
     "tslint": "^5.18.0",
     "typescript": "^3.5.2",
     "webpack": "^4.35.0",
-    "webpack-cli": "^3.3.5"
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
     "phaser": "^3.18.1"

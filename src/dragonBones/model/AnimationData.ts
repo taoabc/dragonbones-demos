@@ -20,6 +20,9 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+import { BaseObject, Map } from '../core/BaseObject';
+import { AnimationBlendType, TimelineType } from '../core/DragonBones';
+import { ArmatureData } from './ArmatureData';
 /**
  * - The animation data.
  * @version DragonBones 3.0

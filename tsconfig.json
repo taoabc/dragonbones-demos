@@ -6,18 +6,16 @@
     "module": "commonjs",
     "noImplicitAny": true,
     "importHelpers": false,
-    "sourceMap": false,
-    "declaration": true,
+    "sourceMap": true,
     "stripInternal": true,
     "alwaysStrict": true,
     "noUnusedLocals": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "outDir": "dist",
+    "outDir": "Demos/libs",
   },
   "include": [
-    "Demos/libs/origin-dragonbones.d.ts",
-    "src/dragonBones-phaser/**/*"
+    "src/dragonBones/index.ts"
   ],
   "exclude": [
     "node_modules",

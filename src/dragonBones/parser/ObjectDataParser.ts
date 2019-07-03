@@ -20,6 +20,20 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+import { DataParser } from './DataParser';
+import { BoneData, SlotData, SurfaceData } from '../model/ArmatureData';
+import { DragonBonesData, ArmatureData, DisplayData } from '../model';
+import { GeometryData, MeshDisplayData, PathDisplayData, ImageDisplayData, ArmatureDisplayData, BoundingBoxDisplayData, WeightData } from '../model/DisplayData';
+import { SkinData } from '../model/SkinData';
+import { AnimationData, TimelineData, AnimationTimelineData } from '../model/AnimationData';
+import { Matrix, ColorTransform, Point, Transform } from '../geom';
+import { ActionData, UserData } from '../model/UserData';
+import { BaseObject, Map } from '../core/BaseObject';
+import { TextureAtlasData, TextureData } from '../model/TextureAtlasData';
+import { ArmatureType, ActionType, BoneType, ConstraintType, BlendMode, DisplayType, BoundingBoxType, TimelineType, AnimationBlendType, BinaryOffset, TweenType } from '../core/DragonBones';
+import { CanvasData } from '../model/CanvasData';
+import { ConstraintData, IKConstraintData, PathConstraintData } from '../model/ConstraintData';
+import { BoundingBoxData, RectangleBoundingBoxData, EllipseBoundingBoxData, PolygonBoundingBoxData } from '../model/BoundingBoxData';
 /**
  * @private
  */

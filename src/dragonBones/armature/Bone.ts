@@ -20,6 +20,12 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+import { Transform } from '../geom';
+import { TransformObject } from './TransformObject';
+import { BoneData } from '../model/ArmatureData';
+import { OffsetMode, DragonBones, BoneType } from '../core/DragonBones';
+import { Armature } from './Armature';
+import { Surface } from './Surface';
 /**
  * - Bone is one of the most important logical units in the armature animation system,
  * and is responsible for the realization of translate, rotation, scaling in the animations.

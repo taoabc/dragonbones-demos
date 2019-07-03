@@ -20,6 +20,14 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+import { BaseObject } from '../core/BaseObject';
+import { Matrix, Point, Transform } from '../geom';
+import { ConstraintData, IKConstraintData, PathConstraintData } from '../model/ConstraintData';
+import { Bone } from './Bone';
+import { Armature } from './Armature';
+import { Slot, DisplayFrame } from './Slot';
+import { RotateMode, SpacingMode, PositionMode, BinaryOffset } from '../core/DragonBones';
+import { PathDisplayData, GeometryData } from '../model/DisplayData';
 /**
  * @internal
  */
