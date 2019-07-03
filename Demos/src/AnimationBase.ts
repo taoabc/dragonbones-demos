@@ -1,3 +1,5 @@
+import Phaser from 'phaser';
+import * as dragonBonesPhaser from '../../src/dragonbones-phaser';
 import { BaseDemo } from './BaseDemo';
 export class AnimationBase extends BaseDemo {
     private _armatureDisplay: dragonBones.phaser.display.ArmatureDisplay;
@@ -23,14 +25,14 @@ export class AnimationBase extends BaseDemo {
         this._armatureDisplay = this.add.armature("progress_bar", "progress_bar");
         this._armatureDisplay.x = this.cameras.main.centerX;
         this._armatureDisplay.y = this.cameras.main.centerY;
-        this._armatureDisplay.addDBEventListener(dragonBones.EventObject.START, this._animationEventHandler, this);
-        this._armatureDisplay.addDBEventListener(dragonBones.EventObject.LOOP_COMPLETE, this._animationEventHandler, this);
-        this._armatureDisplay.addDBEventListener(dragonBones.EventObject.COMPLETE, this._animationEventHandler, this);
-        this._armatureDisplay.addDBEventListener(dragonBones.EventObject.FADE_IN, this._animationEventHandler, this);
-        this._armatureDisplay.addDBEventListener(dragonBones.EventObject.FADE_IN_COMPLETE, this._animationEventHandler, this);
-        this._armatureDisplay.addDBEventListener(dragonBones.EventObject.FADE_OUT, this._animationEventHandler, this);
-        this._armatureDisplay.addDBEventListener(dragonBones.EventObject.FADE_OUT_COMPLETE, this._animationEventHandler, this);
-        this._armatureDisplay.addDBEventListener(dragonBones.EventObject.FRAME_EVENT, this._animationEventHandler, this);
+        this._armatureDisplay.addDBEventListener(dragonBonesPhaser.dragonBones.EventObject.START, this._animationEventHandler, this);
+        this._armatureDisplay.addDBEventListener(dragonBonesPhaser.dragonBones.EventObject.LOOP_COMPLETE, this._animationEventHandler, this);
+        this._armatureDisplay.addDBEventListener(dragonBonesPhaser.dragonBones.EventObject.COMPLETE, this._animationEventHandler, this);
+        this._armatureDisplay.addDBEventListener(dragonBonesPhaser.dragonBones.EventObject.FADE_IN, this._animationEventHandler, this);
+        this._armatureDisplay.addDBEventListener(dragonBonesPhaser.dragonBones.EventObject.FADE_IN_COMPLETE, this._animationEventHandler, this);
+        this._armatureDisplay.addDBEventListener(dragonBonesPhaser.dragonBones.EventObject.FADE_OUT, this._animationEventHandler, this);
+        this._armatureDisplay.addDBEventListener(dragonBonesPhaser.dragonBones.EventObject.FADE_OUT_COMPLETE, this._animationEventHandler, this);
+        this._armatureDisplay.addDBEventListener(dragonBonesPhaser.dragonBones.EventObject.FRAME_EVENT, this._animationEventHandler, this);
         this._armatureDisplay.animation.play("idle");
 
         this.input.enabled = true;
@@ -61,7 +63,7 @@ export class AnimationBase extends BaseDemo {
         }
     }
 
-    private _animationEventHandler(event: dragonBones.EventObject): void {
+    private _animationEventHandler(event: dragonBonesPhaser.dragonBones.EventObject): void {
         console.log(event.animationState.name, event.type, event.name);
     }
 }
