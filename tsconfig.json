@@ -12,10 +12,11 @@
     "noUnusedLocals": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
+    "declaration": false,
     "outDir": "Demos/libs",
   },
   "include": [
-    "src/dragonBones/index.ts"
+    "src/dragonbones-phaser/index.ts"
   ],
   "exclude": [
     "node_modules",

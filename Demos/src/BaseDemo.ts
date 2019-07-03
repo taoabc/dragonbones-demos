@@ -1,5 +1,5 @@
 
-import Phaser from 'Phaser';
+import { Phaser } from '../../src/dragonbones-phaser';
 export class BaseDemo extends Phaser.Scene {
 
     private static BACKGROUND_URL: string = "resource/background.png";

@@ -1,4 +1,3 @@
-import Phaser from 'phaser';
 import * as dragonBonesPhaser from '../../src/dragonbones-phaser';
 import { BaseDemo } from './BaseDemo';
 export class AnimationBase extends BaseDemo {
@@ -45,7 +44,7 @@ export class AnimationBase extends BaseDemo {
     private _isTouched: boolean = false;
 
     private _inputDown(): void {
-        const progress = Phaser.Math.Clamp((this.input.x - this._armatureDisplay.x + 300.0) / 600.0, 0.0, 1.0);
+        const progress = dragonBonesPhaser.Phaser.Math.Clamp((this.input.x - this._armatureDisplay.x + 300.0) / 600.0, 0.0, 1.0);
         this._isTouched = true;
         this._armatureDisplay.animation.gotoAndStopByProgress("idle", progress);
     }
@@ -57,7 +56,7 @@ export class AnimationBase extends BaseDemo {
 
     public update(): void {
         if (this._isTouched) {
-            const progress = Phaser.Math.Clamp((this.input.x - this._armatureDisplay.x + 300.0) / 600.0, 0.0, 1.0);
+            const progress = dragonBonesPhaser.Phaser.Math.Clamp((this.input.x - this._armatureDisplay.x + 300.0) / 600.0, 0.0, 1.0);
             const animationState = this._armatureDisplay.animation.getState("idle");
             animationState.currentTime = animationState.totalTime * progress;
         }

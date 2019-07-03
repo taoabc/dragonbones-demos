@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
 
   entry: {
     'app': path.resolve(__dirname, '../src/index.ts'),
@@ -66,7 +66,6 @@ module.exports = {
 
   devServer: {
     // contentBase: `${__dirname}/../dist`,
-    publicPath: `dist`,
     compress: true,
     port: 9000
   }

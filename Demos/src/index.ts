@@ -36,4 +36,4 @@ const config = {
   // scene: PerformanceTest
 };
 
-new Phaser.Game(config);
+new Phaser.Game(config); // TODO Why can access Phaser without error?

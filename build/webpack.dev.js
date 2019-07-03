@@ -4,6 +4,8 @@ const webpack = require('webpack');
 module.exports = {
   mode: 'development',
 
+  devtool: 'source-map',
+
   entry: {
     'dragonbones-phaser': path.resolve(__dirname, '../src/dragonbones-phaser/index.ts'),
     // 'dragonbones-phaser.min': path.resolve(__dirname, '../src/index.ts'),
