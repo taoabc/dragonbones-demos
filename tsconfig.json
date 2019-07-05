@@ -12,8 +12,8 @@
     "noUnusedLocals": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "declaration": false,
-    "outDir": "Demos/libs",
+    "declaration": true,
+    "outDir": "dist",
   },
   "include": [
     "src/dragonbones-phaser/index.ts"

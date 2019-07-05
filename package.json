@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config build/webpack.dev.js",
+    "build": "tsc",
     "build-origindbs": "tsc -p src/origin-dbs/",
     "build-originphaser": "tsc -p src/origin-phaser/",
     "build-demos": "webpack --config Demos/build/webpack.dev.js --watch",

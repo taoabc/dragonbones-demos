@@ -11,3 +11,10 @@ export {
   util,
   dragonBones,
 };
+
+export default {
+  Phaser,
+  DragonBonesScenePlugin,
+  util,
+  dragonBones,
+};
