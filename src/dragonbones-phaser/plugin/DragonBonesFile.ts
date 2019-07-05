@@ -1,3 +1,4 @@
+import Phaser from 'phaser';
 import { FileTypes } from './FileTypes';
 
 export class DragonBonesFile extends Phaser.Loader.MultiFile {

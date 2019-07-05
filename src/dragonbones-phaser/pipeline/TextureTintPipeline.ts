@@ -1,4 +1,6 @@
+import Phaser from 'phaser';
 import { TransformMatrix } from '../util/TransformMatrix';
+
 export class TextureTintPipeline extends Phaser.Renderer.WebGL.Pipelines.TextureTintPipeline {
     private _tempMatrix1: TransformMatrix;
     private _tempMatrix2: TransformMatrix;

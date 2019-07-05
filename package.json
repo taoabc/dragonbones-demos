@@ -7,7 +7,8 @@
     "build": "webpack --config build/webpack.dev.js",
     "build-origindbs": "tsc -p src/origin-dbs/",
     "build-originphaser": "tsc -p src/origin-phaser/",
-    "build-demos": "webpack --config Demos/build/webpack.dev.js",
+    "build-demos": "webpack --config Demos/build/webpack.dev.js --watch",
+    "serve-demos": "serve Demos/dist/",
     "demos": "webpack-dev-server --config Demos/build/webpack.dev.js --progress --colors",
     "demos-umd": "tsc -p Demos-umd/ & serve Demos-umd",
     "lint-fix": "tslint -p . --fix"
@@ -25,7 +26,7 @@
     "ts-loader": "^6.0.4",
     "tslint": "^5.18.0",
     "typescript": "^3.5.2",
-    "webpack": "^4.35.0",
+    "webpack": "^4.35.2",
     "webpack-cli": "^3.3.5",
     "webpack-dev-server": "^3.7.2"
   },

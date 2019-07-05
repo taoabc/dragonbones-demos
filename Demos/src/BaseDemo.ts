@@ -1,8 +1,8 @@
 
 import { Phaser } from '../../src/dragonbones-phaser';
-export class BaseDemo extends Phaser.Scene {
+export default class BaseDemo extends Phaser.Scene {
 
-    private static BACKGROUND_URL: string = "resource/background.png";
+    private static BACKGROUND_URL: string = 'resource/background.png';
 
     preload(): void {
         this.load.image(BaseDemo.BACKGROUND_URL, BaseDemo.BACKGROUND_URL);
@@ -13,7 +13,7 @@ export class BaseDemo extends Phaser.Scene {
     }
 
     public createText(str: string): Phaser.GameObjects.Text {
-        const style = { fontSize: 18, color: "#FFFFFF", align: "center" };
+        const style = { fontSize: 18, color: '#FFFFFF', align: 'center' };
         const text = this.add.text(this.cameras.main.centerX, this.cameras.main.height - 100, str, style);
         text.setOrigin(.5, .5);
         return text;

@@ -498,7 +498,7 @@ export class Bone extends TransformObject {
                             global.skew += Math.PI;
                         }
 
-                        if (!dragonBones.DragonBones.yDown) {
+                        if (!DragonBones.yDown) {
                             global.skew = -global.skew;
                         }
                     }

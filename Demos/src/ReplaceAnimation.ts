@@ -1,34 +1,37 @@
-class ReplaceAnimation extends BaseDemo {
+import BaseDemo from './BaseDemo';
+import { dragonBones } from '../../src/dragonbones-phaser';
+
+export default class ReplaceAnimation extends BaseDemo {
     private _armatureDisplayA: dragonBones.phaser.display.ArmatureDisplay;
     private _armatureDisplayB: dragonBones.phaser.display.ArmatureDisplay;
     private _armatureDisplayC: dragonBones.phaser.display.ArmatureDisplay;
     private _armatureDisplayD: dragonBones.phaser.display.ArmatureDisplay;
 
     public constructor() {
-        super("ReplaceAnimation");
+        super('ReplaceAnimation');
     }
 
     preload(): void {
         super.preload();
 
         this.load.dragonbone(
-            "mecha_2903",
-            "resource/mecha_2903/mecha_2903_tex.png",
-            "resource/mecha_2903/mecha_2903_tex.json",
-            "resource/mecha_2903/mecha_2903_ske.json"
+            'mecha_2903',
+            'resource/mecha_2903/mecha_2903_tex.png',
+            'resource/mecha_2903/mecha_2903_tex.json',
+            'resource/mecha_2903/mecha_2903_ske.json'
         );
     }
 
     create(): void {
         super.create();
 
-        this._armatureDisplayA = this.add.armature("mecha_2903", "mecha_2903");
-        this._armatureDisplayB = this.add.armature("mecha_2903b", "mecha_2903");
-        this._armatureDisplayC = this.add.armature("mecha_2903c", "mecha_2903");
-        this._armatureDisplayD = this.add.armature("mecha_2903d", "mecha_2903");
+        this._armatureDisplayA = this.add.armature('mecha_2903', 'mecha_2903');
+        this._armatureDisplayB = this.add.armature('mecha_2903b', 'mecha_2903');
+        this._armatureDisplayC = this.add.armature('mecha_2903c', 'mecha_2903');
+        this._armatureDisplayD = this.add.armature('mecha_2903d', 'mecha_2903');
 
         const factory = this.dragonbone.factory;
-        const sourceArmatureData = factory.getArmatureData("mecha_2903d");
+        const sourceArmatureData = factory.getArmatureData('mecha_2903d');
         factory.replaceAnimation(this._armatureDisplayA.armature, sourceArmatureData);
         factory.replaceAnimation(this._armatureDisplayB.armature, sourceArmatureData);
         factory.replaceAnimation(this._armatureDisplayC.armature, sourceArmatureData);
@@ -50,7 +53,7 @@ class ReplaceAnimation extends BaseDemo {
             this._changeAnimation();
         });
 
-        this.createText("Touch to change animation.");
+        this.createText('Touch to change animation.');
     }
 
     private _changeAnimation(): void {

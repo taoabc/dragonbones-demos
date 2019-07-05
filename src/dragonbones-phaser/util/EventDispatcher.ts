@@ -1,3 +1,4 @@
+import Phaser from 'phaser';
 import * as dragonBones from '../../dragonBones';
 
 export class EventDispatcher extends Phaser.Events.EventEmitter implements dragonBones.IEventDispatcher {

@@ -1,15 +1,17 @@
-class BoneOffset extends BaseDemo {
+import { dragonBones } from '../../src/dragonbones-phaser';
+import BaseDemo from './BaseDemo';
+export default class BoneOffset extends BaseDemo {
     public constructor() {
-        super("BoneOffset");
+        super('BoneOffset');
     }
 
     preload(): void {
         super.preload();
         this.load.dragonbone(
-            "bullet_01",
-            "resource/bullet_01/bullet_01_tex.png",
-            "resource/bullet_01/bullet_01_tex.json",
-            "resource/bullet_01/bullet_01_ske.json",
+            'bullet_01',
+            'resource/bullet_01/bullet_01_tex.png',
+            'resource/bullet_01/bullet_01_tex.json',
+            'resource/bullet_01/bullet_01_ske.json',
         );
     }
 
@@ -17,7 +19,7 @@ class BoneOffset extends BaseDemo {
         super.create();
 
         for (let i = 0; i < 100; ++i) {
-            const armatureDisplay = this.add.armature("bullet_01", "bullet_01");
+            const armatureDisplay = this.add.armature('bullet_01', 'bullet_01');
             armatureDisplay.addDBEventListener(dragonBones.EventObject.COMPLETE, this._animationHandler, this);
             armatureDisplay.x = 0;
             armatureDisplay.y = 0;
@@ -39,8 +41,8 @@ class BoneOffset extends BaseDemo {
         const toY = Math.random() * camera.height - camera.centerY;
         const dX = toX - fromX;
         const dY = toY - fromY;
-        const rootSlot = armatureDisplay.armature.getBone("root");
-        const effectSlot = armatureDisplay.armature.getBone("bullet");
+        const rootSlot = armatureDisplay.armature.getBone('root');
+        const effectSlot = armatureDisplay.armature.getBone('bullet');
         // Modify root and bullet bone offset.
         rootSlot.offset.scaleX = Math.sqrt(dX * dX + dY * dY) / 100; // Bullet translate distance is 100 px.
         rootSlot.offset.rotation = Math.atan2(dY, dX);
@@ -54,6 +56,6 @@ class BoneOffset extends BaseDemo {
         armatureDisplay.x = fromX;
         armatureDisplay.y = fromY;
         armatureDisplay.animation.timeScale = 0.5 + Math.random() * 1.0; // Random animation speed.
-        armatureDisplay.animation.play("idle", 1);
+        armatureDisplay.animation.play('idle', 1);
     }
 }

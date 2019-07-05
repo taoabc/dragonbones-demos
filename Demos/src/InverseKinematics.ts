@@ -1,4 +1,8 @@
-class InverseKinematics extends BaseDemo {
+import { dragonBones, Phaser } from '../../src/dragonbones-phaser';
+import BaseDemo from './BaseDemo';
+import DragHelper from './DragHelper';
+
+export default class InverseKinematics extends BaseDemo {
     private _faceDir: number = 0;
     private _aimRadian: number = 0.0;
     private _offsetRotation: number = 0.0;
@@ -13,51 +17,51 @@ class InverseKinematics extends BaseDemo {
     private _aimState: dragonBones.AnimationState;
 
     public constructor() {
-        super("IKDemo");
+        super('IKDemo');
     }
 
     preload(): void {
         super.preload();
 
         this.load.dragonbone(
-            "mecha_1406",
-            "resource/mecha_1406/mecha_1406_tex.png",
-            "resource/mecha_1406/mecha_1406_tex.json",
-            "resource/mecha_1406/mecha_1406_ske.json"
+            'mecha_1406',
+            'resource/mecha_1406/mecha_1406_tex.png',
+            'resource/mecha_1406/mecha_1406_tex.json',
+            'resource/mecha_1406/mecha_1406_ske.json'
         );
         this.load.dragonbone(
-            "floor_board",
-            "resource/floor_board/floor_board_tex.png",
-            "resource/floor_board/floor_board_tex.json",
-            "resource/floor_board/floor_board_ske.json"
+            'floor_board',
+            'resource/floor_board/floor_board_tex.png',
+            'resource/floor_board/floor_board_tex.json',
+            'resource/floor_board/floor_board_ske.json'
         );
     }
 
     create(): void {
         super.create();
 
-        this._armatureDisplay = this.add.armature("mecha_1406", "mecha_1406");
-        this._floorBoard = this.add.armature("floor_board", "floor_board");
+        this._armatureDisplay = this.add.armature('mecha_1406', 'mecha_1406');
+        this._floorBoard = this.add.armature('floor_board', 'floor_board');
         //
-        this._chestBone = this._armatureDisplay.armature.getBone("chest");
-        this._leftFootBone = this._armatureDisplay.armature.getBone("foot_l");
-        this._rightFootBone = this._armatureDisplay.armature.getBone("foot_r");
-        this._circleBone = this._floorBoard.armature.getBone("circle");
-        this._floorBoardBone = this._floorBoard.armature.getBone("floor_board");
+        this._chestBone = this._armatureDisplay.armature.getBone('chest');
+        this._leftFootBone = this._armatureDisplay.armature.getBone('foot_l');
+        this._rightFootBone = this._armatureDisplay.armature.getBone('foot_r');
+        this._circleBone = this._floorBoard.armature.getBone('circle');
+        this._floorBoardBone = this._floorBoard.armature.getBone('floor_board');
         //
-        this._armatureDisplay.animation.play("idle");
-        this._aimState = this._armatureDisplay.animation.fadeIn("aim", 0.1, 1, 0, "aim_group");
+        this._armatureDisplay.animation.play('idle');
+        this._aimState = this._armatureDisplay.animation.fadeIn('aim', 0.1, 1, 0, 'aim_group');
         this._aimState.resetToPose = false;
         this._aimState.stop();
         //
-        this._floorBoard.animation.play("idle");
-        this._floorBoard.armature.getSlot("player").display = this._armatureDisplay;
+        this._floorBoard.animation.play('idle');
+        this._floorBoard.armature.getSlot('player').display = this._armatureDisplay;
         this._floorBoard.x = this.cameras.main.centerX;
         this._floorBoard.y =  this.cameras.main.centerY + 50.0;
         //
-        DragHelper.getInstance().enableDrag(this, this._floorBoard.armature.getSlot("circle").display);
+        DragHelper.getInstance().enableDrag(this, this._floorBoard.armature.getSlot('circle').display);
         //
-        this.createText("Touch and drag the red circle to modify the IK bones.");
+        this.createText('Touch and drag the red circle to modify the IK bones.');
     }
 
     update(time: number, delta: number): void {

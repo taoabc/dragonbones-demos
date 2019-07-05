@@ -1,4 +1,7 @@
-class DragHelper {
+import { Phaser, dragonBones } from '../../src/dragonbones-phaser';
+
+// TODO debug drag
+export default class DragHelper {
     private static _instance: DragHelper = new DragHelper();
     public static getInstance(): DragHelper {
         return DragHelper._instance;
@@ -11,15 +14,15 @@ class DragHelper {
     public enableDrag(scene: Phaser.Scene, displayObject: Phaser.GameObjects.GameObject): void {
         scene.input.enable(displayObject);
         scene.input.setDraggable(displayObject, true);
-        displayObject.on("dragstart", (a, b, c) => { this._dragStartHandler(displayObject, a, b, c); }, this);
-        displayObject.on("dragend", this._dragStopHandler, this);
+        displayObject.on('dragstart', (a, b, c) => { this._dragStartHandler(displayObject, a, b, c); }, this);
+        displayObject.on('dragend', this._dragStopHandler, this);
     }
 
     public disableDrag(scene: Phaser.Scene, displayObject: Phaser.GameObjects.Sprite): void {
         scene.input.setDraggable(displayObject, false);
         scene.input.disable(displayObject);
-        displayObject.off("dragstart", this._dragStartHandler, this);
-        displayObject.off("dragend", this._dragStopHandler, this);
+        displayObject.off('dragstart', this._dragStartHandler, this);
+        displayObject.off('dragend', this._dragStopHandler, this);
     }
 
     private _dragStartHandler(displayObject: Phaser.GameObjects.GameObject, pointer: Phaser.Input.Pointer, dragX: number, dragY: number): void {
@@ -45,7 +48,7 @@ class DragHelper {
             this._dragOffset.x = bone.offset.x - this._helpPoint.x;
             this._dragOffset.y = bone.offset.y - this._helpPoint.y;
 
-            displayObject.on("pointermove", this._dragHandler, this);
+            displayObject.on('pointermove', this._dragHandler, this);
         }
     }
 
@@ -54,7 +57,7 @@ class DragHelper {
             return;
         }
 
-        this._dragDisplayObject.off("pointermove", this._dragHandler, this);
+        this._dragDisplayObject.off('pointermove', this._dragHandler, this);
         this._dragDisplayObject = null;
     }
 

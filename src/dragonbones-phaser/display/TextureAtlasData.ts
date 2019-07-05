@@ -1,3 +1,4 @@
+import Phaser from 'phaser';
 import * as dragonBones from '../../dragonBones';
 
 export class TextureAtlasData extends dragonBones.TextureAtlasData {

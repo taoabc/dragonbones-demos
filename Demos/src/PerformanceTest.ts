@@ -1,4 +1,7 @@
-class PerformanceTest extends BaseDemo {
+import { dragonBones, Phaser } from '../../src/dragonbones-phaser';
+import BaseDemo from './BaseDemo';
+
+export default class PerformanceTest extends BaseDemo {
     private _addingArmature: boolean = false;
     private _removingArmature: boolean = false;
     private readonly _armatures: Array<dragonBones.phaser.display.ArmatureDisplay> = [];
@@ -6,20 +9,20 @@ class PerformanceTest extends BaseDemo {
     private _perfText: Phaser.GameObjects.Text;
 
     public constructor() {
-        super("PerformanceText");
+        super('PerformanceText');
     }
 
     preload(): void {
         super.preload();
 
         this.load.dragonbone(
-            "mecha_1406",
-            "resource/mecha_1406/mecha_1406_tex.png",
-            "resource/mecha_1406/mecha_1406_tex.json",
-            "resource/mecha_1406/mecha_1406_ske.dbbin",
+            'mecha_1406',
+            'resource/mecha_1406/mecha_1406_tex.png',
+            'resource/mecha_1406/mecha_1406_tex.json',
+            'resource/mecha_1406/mecha_1406_ske.dbbin',
             null,
             null,
-            { responseType: "arraybuffer" }
+            { responseType: 'arraybuffer' }
         );
     }
 
@@ -27,12 +30,12 @@ class PerformanceTest extends BaseDemo {
         super.create();
 
         this.input.enabled = true;
-        this.input.on("pointerdown", p => this._inputDown(p));
-        this.input.on("pointerup", () => this._inputUp());
+        this.input.on('pointerdown', p => this._inputDown(p));
+        this.input.on('pointerup', () => this._inputUp());
 
-        this._text = this.createText("--");
+        this._text = this.createText('--');
         this._text.y = this.cameras.main.height - 80;
-        this._perfText = this.createText("--");
+        this._perfText = this.createText('--');
         this._perfText.y = this._text.y + this._text.height + 10;
 
         for (let i = 0; i < 300; ++i) {
@@ -78,9 +81,9 @@ class PerformanceTest extends BaseDemo {
     }
 
     private _addArmature(): void {
-        const armatureDisplay = this.add.armature("mecha_1406", "mecha_1406");
+        const armatureDisplay = this.add.armature('mecha_1406', 'mecha_1406');
         armatureDisplay.armature.cacheFrameRate = 24;
-        armatureDisplay.animation.play("walk");
+        armatureDisplay.animation.play('walk');
         armatureDisplay.setScale(.5);
 
         this._armatures.push(armatureDisplay);
@@ -126,6 +129,6 @@ class PerformanceTest extends BaseDemo {
     }
 
     private _updateText(): void {
-        this._text.setText("Count: " + this._armatures.length + ". Touch screen left to decrease count / right to increase count.");
+        this._text.setText('Count: ' + this._armatures.length + '. Touch screen left to decrease count / right to increase count.');
     }
 }

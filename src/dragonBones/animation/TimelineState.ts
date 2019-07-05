@@ -27,7 +27,7 @@ import { TimelineData } from '../model/AnimationData';
 import { BinaryOffset, ActionType } from '../core/DragonBones';
 import { Armature } from '../armature/Armature';
 import { AnimationState, BlendState } from './AnimationState';
-import { Transform } from 'stream';
+import { Transform } from '../geom';
 import { Bone } from '../armature/Bone';
 import { Surface } from '../armature/Surface';
 import { TransformObject } from '../armature/TransformObject';

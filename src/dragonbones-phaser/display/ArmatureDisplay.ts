@@ -1,3 +1,4 @@
+import Phaser from 'phaser';
 import * as dragonBones from '../../dragonBones';
 import { DisplayContainer } from './DisplayContainer';
 
