@@ -1,5 +1,5 @@
 import BaseDemo from './BaseDemo';
-import { dragonBones } from '../../src/dragonbones-phaser';
+import { dragonBones } from '../../src';
 
 export default class ReplaceAnimation extends BaseDemo {
     private _armatureDisplayA: dragonBones.phaser.display.ArmatureDisplay;

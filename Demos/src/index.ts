@@ -1,4 +1,4 @@
-import { DragonBonesScenePlugin, Phaser } from '../../src/dragonbones-phaser';
+import { DragonBonesScenePlugin, Phaser } from '../../src';
 import HelloDragonBones from './HelloDragonBones';
 import AnimationBase from './AnimationBase';
 import DragonBonesEvent from './DragonBonesEvent';

@@ -1,4 +1,4 @@
-import { dragonBones, Phaser } from '../../src/dragonbones-phaser';
+import { dragonBones, Phaser } from '../../src';
 
 import BaseDemo from './BaseDemo';
 import DragHelper from './DragHelper';

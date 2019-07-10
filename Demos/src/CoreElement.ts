@@ -1,4 +1,4 @@
-import { Phaser, dragonBones } from '../../src/dragonbones-phaser';
+import { Phaser, dragonBones } from '../../src';
 import BaseDemo from './BaseDemo';
 
 type PointType = Phaser.Math.Vector2;

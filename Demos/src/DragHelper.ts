@@ -1,4 +1,4 @@
-import { Phaser, dragonBones } from '../../src/dragonbones-phaser';
+import { Phaser, dragonBones } from '../../src';
 
 // TODO debug drag
 export default class DragHelper {

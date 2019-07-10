@@ -1,4 +1,4 @@
-import { dragonBones } from '../../src/dragonbones-phaser';
+import { dragonBones } from '../../src';
 import BaseDemo from './BaseDemo';
 export default class BoneOffset extends BaseDemo {
     public constructor() {

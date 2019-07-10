@@ -1,6 +1,6 @@
 import BaseDemo from './BaseDemo';
-import * as dbsPhaser from '../../src/dragonbones-phaser';
-import { dragonBones } from '../../src/dragonbones-phaser';
+import * as dbsPhaser from '../../src';
+import { dragonBones } from '../../src';
 
 export default class DragonBonesEvent extends BaseDemo {
     private _armatureDisplay: dragonBones.phaser.display.ArmatureDisplay;
