@@ -32,7 +32,7 @@ const config = {
       ]
   },
 
-//   scene: HelloDragonBones    // scene to display
+  scene: HelloDragonBones    // scene to display
   //   scene: AnimationBase
 //   scene: DragonBonesEvent
 //   scene: AnimationLayer
@@ -42,7 +42,7 @@ const config = {
 //   scene: ReplaceSlotDisplay // TODO
 //   scene: ReplaceAnimation
 //   scene: CoreElementGame
-  scene: PerformanceTest
+  // scene: PerformanceTest
 };
 
 new Phaser.Game(config);

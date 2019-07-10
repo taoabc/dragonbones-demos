@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 
-import * as dragonBones from '../../dragonBones';
+import * as dragonBones from 'libdragonbones';
 
 import { Factory } from '../Factory';
 import { TextureTintPipeline } from '../pipeline/TextureTintPipeline';

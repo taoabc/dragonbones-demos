@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import * as dragonBones from '../../dragonBones';
+import * as dragonBones from 'libdragonbones';
 
 export class EventDispatcher extends Phaser.Events.EventEmitter implements dragonBones.IEventDispatcher {
     public hasDBEventListener(type: dragonBones.EventStringType): boolean {

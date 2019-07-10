@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import * as dragonBones from '../../dragonBones';
+import * as dragonBones from 'libdragonbones';
 import { DisplayContainer } from './DisplayContainer';
 
 export class ArmatureDisplay extends DisplayContainer implements dragonBones.IArmatureProxy {

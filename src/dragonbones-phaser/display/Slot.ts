@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import * as dragonBones from '../../dragonBones';
+import * as dragonBones from 'libdragonbones';
 import { SlotImage } from './SlotImage';
 import { SlotSprite } from './SlotSprite';
 import { DisplayContainer } from './DisplayContainer';

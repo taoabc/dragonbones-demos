@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import * as dragonBones from '../dragonBones';
+import * as dragonBones from 'libdragonbones';
 
 import { TextureAtlasData } from './display/TextureAtlasData';
 import { ArmatureDisplay } from './display/ArmatureDisplay';
