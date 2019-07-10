@@ -16,7 +16,7 @@
     "outDir": "dist",
   },
   "include": [
-    "src/dragonbones-phaser/index.ts"
+    "src/index.ts"
   ],
   "exclude": [
     "node_modules",
