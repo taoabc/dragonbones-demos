@@ -14,6 +14,9 @@ module.exports = {
   resolve: {
     // Add `.ts` and `.tsx` as a resolvable extension.
     extensions: ['.ts', '.tsx', '.js'],
+    alias: {
+      'dragonbones-phaser': path.resolve(__dirname, '../../dragonbones-phaser'),
+    }
   },
 
   output: {

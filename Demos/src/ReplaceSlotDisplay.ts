@@ -1,4 +1,4 @@
-import { Factory, dragonBones, Phaser, util } from '../../src';
+import { Factory, dragonBones, Phaser, util } from 'dragonbones-phaser';
 import BaseDemo from './BaseDemo';
 
 export default class ReplaceSlotDisplay extends BaseDemo {

@@ -1,4 +1,4 @@
-import { dragonBones, Phaser } from '../../src';
+import { dragonBones, Phaser } from 'dragonbones-phaser';
 import BaseDemo from './BaseDemo';
 
 export default class PerformanceTest extends BaseDemo {

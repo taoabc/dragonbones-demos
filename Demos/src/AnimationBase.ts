@@ -1,4 +1,4 @@
-import * as dragonBonesPhaser from '../../src';
+import * as dragonBonesPhaser from 'dragonbones-phaser';
 import BaseDemo from './BaseDemo';
 export default class AnimationBase extends BaseDemo {
     private _armatureDisplay: dragonBones.phaser.display.ArmatureDisplay;
