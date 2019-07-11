@@ -32,16 +32,16 @@ const config = {
       ]
   },
 
-  scene: HelloDragonBones    // scene to display
-  //   scene: AnimationBase
-//   scene: DragonBonesEvent
-//   scene: AnimationLayer
-//   scene: BoneOffset
-//   scene: InverseKinematics
-//   scene: BoundingBox // TODO maby this has issue to run
-//   scene: ReplaceSlotDisplay // TODO
-//   scene: ReplaceAnimation
-//   scene: CoreElementGame
+  // scene: HelloDragonBones    // scene to display
+  // scene: AnimationBase
+  // scene: DragonBonesEvent
+  // scene: AnimationLayer
+  // scene: BoneOffset
+  // scene: InverseKinematics
+  // scene: BoundingBox // TODO maby this has issue to run
+  scene: ReplaceSlotDisplay // TODO
+  // scene: ReplaceAnimation
+  // scene: CoreElementGame
   // scene: PerformanceTest
 };
 

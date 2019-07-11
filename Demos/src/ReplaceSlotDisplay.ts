@@ -58,10 +58,19 @@ export default class ReplaceSlotDisplay extends BaseDemo {
         this.createText('Touch screen left / center / right to replace slot display.');
     }
 
+    private oddDisplay = null;
+    private evenDisplay = null;
+
     private _replaceDisplay(type: number): void {
         if (type === -1) {
             this._rightWeaponIndex++;
             this._rightWeaponIndex %= ReplaceSlotDisplay.WEAPON_RIGHT_LIST.length;
+            if (this._rightWeaponIndex % 2 === 0) {
+                this.evenDisplay = this._armatureDisplay.armature.getSlot('weapon_hand_r')._displayFrame.display;
+            } else {
+                this.oddDisplay = this._armatureDisplay.armature.getSlot('weapon_hand_r')._displayFrame.display;
+            }
+            console.log(this.evenDisplay === this.oddDisplay);
             const displayName = ReplaceSlotDisplay.WEAPON_RIGHT_LIST[this._rightWeaponIndex];
             // TODO
             this._factory.replaceSlotDisplay('weapon_1004', 'weapon', 'weapon_r', displayName, this._armatureDisplay.armature.getSlot('weapon_hand_r'));
