@@ -17,7 +17,7 @@ module.exports = {
   },
 
   output: {
-    path: `${__dirname}/../Demos/libs`,
+    path: `${__dirname}/../phaser/libs`,
     library: 'dragonBonesPhaser',
     libraryTarget: 'umd'
   },

@@ -2,11 +2,10 @@
 
 dist/
 
-Demos/libs/
-Demos/dist/
+phaser/dist/
 
-Demos-umd/dist/
-Demos-umd/libs/
+phaser-umd/dist/
+phaser-umd/libs/
 
 # Logs
 logs

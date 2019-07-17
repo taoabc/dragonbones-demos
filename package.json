@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-demos": "webpack --config Demos/build/webpack.dev.js --watch",
-    "serve-demos": "serve Demos/dist/",
-    "demos": "webpack-dev-server --config Demos/build/webpack.dev.js --progress --colors",
-    "demos-umd": "tsc -p Demos-umd/ & serve Demos-umd",
+    "build-phaser": "webpack --config phaser/build/webpack.dev.js --watch",
+    "serve-phaser": "serve phaser/dist/",
+    "phaser": "webpack-dev-server --config phaser/build/webpack.dev.js --progress --colors",
+    "phaser-umd": "tsc -p phaser-umd/ & serve phaser-umd",
     "lint-fix": "tslint -p . --fix"
   },
   "keywords": [],
