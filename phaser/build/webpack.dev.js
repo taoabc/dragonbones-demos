@@ -64,7 +64,7 @@ module.exports = {
       template: `${__dirname}/../template.html`
     }),
     new CopyWebpackPlugin([
-      { from: `${__dirname}/../resource/`, to: 'resource/' }
+      { from: `${__dirname}/../../dragonbones-resource/`, to: 'resource/' }
     ])
   ],
 
