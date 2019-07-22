@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-phaser": "webpack --config phaser/build/webpack.dev.js",
+    "build-phaser": "webpack --config phaser/build/webpack.dev.js --watch",
     "serve-phaser": "serve phaser/dist/",
     "start-phaser": "webpack-dev-server --config phaser/build/webpack.dev.js --progress --colors",
     "phaser-umd": "tsc -p phaser-umd/ & serve phaser-umd",
