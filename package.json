@@ -1,12 +1,12 @@
 {
-  "name": "dragonbones-phaser",
+  "name": "dragonbones-demos",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build-phaser": "webpack --config phaser/build/webpack.dev.js",
     "serve-phaser": "serve phaser/dist/",
-    "phaser": "webpack-dev-server --config phaser/build/webpack.dev.js --progress --colors",
+    "start-phaser": "webpack-dev-server --config phaser/build/webpack.dev.js --progress --colors",
     "phaser-umd": "tsc -p phaser-umd/ & serve phaser-umd",
     "lint-fix": "tslint -p . --fix"
   },
@@ -27,5 +27,9 @@
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.7.2"
+  },
+  "dependencies": {
+    "dragonbones-phaser": "file:dragonbones-phaser",
+    "libdragonbones": "file:libdragonbones"
   }
 }

@@ -14,9 +14,6 @@
     "experimentalDecorators": true,
     "declaration": false,
   },
-  "include": [
-    "phaser/src/**/*"
-  ],
   "exclude": [
     "node_modules"
   ]
