@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "target": "esnext",
     "strict": true,
     "watch": false,
     "module": "commonjs",
@@ -12,14 +12,12 @@
     "noUnusedLocals": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "declaration": true,
-    "outDir": "dist",
+    "declaration": false,
   },
   "include": [
-    "src/index.ts"
+    "phaser/src/**/*"
   ],
   "exclude": [
-    "node_modules",
-    "out"
+    "node_modules"
   ]
 }

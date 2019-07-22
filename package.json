@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-phaser": "webpack --config phaser/build/webpack.dev.js --watch",
+    "build-phaser": "webpack --config phaser/build/webpack.dev.js",
     "serve-phaser": "serve phaser/dist/",
     "phaser": "webpack-dev-server --config phaser/build/webpack.dev.js --progress --colors",
     "phaser-umd": "tsc -p phaser-umd/ & serve phaser-umd",
@@ -17,6 +17,7 @@
     "@babel/core": "^7.5.4",
     "@babel/preset-env": "^7.5.4",
     "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.0.3",
     "html-webpack-plugin": "^3.2.0",
     "serve": "^11.1.0",

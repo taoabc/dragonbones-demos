@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -21,26 +22,8 @@ module.exports = {
   },
 
   output: {
-    path: `${__dirname}/../dist/`,
+    path: path.resolve(__dirname, '../dist/'),
   },
-
-  // optimization: {
-  //   minimizer: [
-  //     new UglifyJSPlugin({
-  //       include: /\.min\.js$/,
-  //       parallel: true,
-  //       sourceMap: false,
-  //       uglifyOptions: {
-  //         compress: true,
-  //         ie8: false,
-  //         ecma: 5,
-  //         output: { comments: false },
-  //         warnings: false
-  //       },
-  //       warningsFilter: () => false
-  //     })
-  //   ]
-  // },
 
   module: {
     rules: [
@@ -60,12 +43,16 @@ module.exports = {
   },
 
   plugins: [
+    new webpack.ProgressPlugin(),
+    new CleanWebpackPlugin({
+      verbose: true
+    }),
     new HtmlWebpackPlugin({
       template: `${__dirname}/../template.html`
     }),
     new CopyWebpackPlugin([
       { from: `${__dirname}/../../dragonbones-resource/`, to: 'resource/' }
-    ])
+    ]),
   ],
 
   devServer: {
