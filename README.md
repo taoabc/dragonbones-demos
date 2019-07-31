@@ -1,10 +1,9 @@
-# DragonBones for Phaser 3 Runtime
+# DragonBones demos for phaser, pixi, cocos
 
 NEXT step:
-  1. change dragonBones runtime to module
-  2. push it to npm
-
-This is DragonBones's npm version for phaser 3 only.
+  1. debug all features under phaser
+  2. build for umd support
+  3. support other engine
 
 ## To learn more about
 * [DragonBones offical website](http://www.dragonbones.com/)
