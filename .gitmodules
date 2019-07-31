@@ -1,6 +1,0 @@
-[submodule "dragonbones-phaser"]
-	path = dragonbones-phaser
-	url = https://github.com/taoabc/dragonbones-phaser.git
-[submodule "libdragonbones"]
-	path = libdragonbones
-	url = https://github.com/taoabc/libdragonbones.git
