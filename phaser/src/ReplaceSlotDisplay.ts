@@ -39,8 +39,8 @@ export default class ReplaceSlotDisplay extends BaseDemo {
         this._armatureDisplay = this.add.armature('mecha_1004d', 'mecha_1004d');
         this._armatureDisplay.animation.play();
 
-        // Dragonbones data will be finded only when add.armature or add.dragonBones called, this makes replaceSlotDisplay work
-        this.add.dragonBones('weapon_1004');
+        // Dragonbones data will be finded only when add.armature called, this line makes replaceSlotDisplay work
+        this.add.armature('weapon', 'weapon_1004');
         //
         this._armatureDisplay.x = this.cameras.main.centerX + 100.0;
         this._armatureDisplay.y = this.cameras.main.centerY + 200.0;
@@ -65,15 +65,9 @@ export default class ReplaceSlotDisplay extends BaseDemo {
         if (type === -1) {
             this._rightWeaponIndex++;
             this._rightWeaponIndex %= ReplaceSlotDisplay.WEAPON_RIGHT_LIST.length;
-            if (this._rightWeaponIndex % 2 === 0) {
-                this.evenDisplay = this._armatureDisplay.armature.getSlot('weapon_hand_r')._displayFrame.display;
-            } else {
-                this.oddDisplay = this._armatureDisplay.armature.getSlot('weapon_hand_r')._displayFrame.display;
-            }
-            console.log(this.evenDisplay === this.oddDisplay);
             const displayName = ReplaceSlotDisplay.WEAPON_RIGHT_LIST[this._rightWeaponIndex];
-            // TODO
-            this._factory.replaceSlotDisplay('weapon_1004', 'weapon', 'weapon_r', displayName, this._armatureDisplay.armature.getSlot('weapon_hand_r'));
+            const slot = this._armatureDisplay.armature.getSlot('weapon_hand_r');
+            this._factory.replaceSlotDisplay('weapon_1004', 'weapon', 'weapon_r', displayName, slot);
         }
         else if (type === 1) {
             this._leftWeaponIndex++;
