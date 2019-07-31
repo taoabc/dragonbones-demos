@@ -1,6 +1,6 @@
 {
   "name": "dragonbones-demos",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -29,7 +29,7 @@
     "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
-    "dragonbones-phaser": "file:dragonbones-phaser",
-    "libdragonbones": "file:libdragonbones"
+    "dragonbones-phaser": "0.0.1",
+    "libdragonbones": "^0.1.3"
   }
 }
