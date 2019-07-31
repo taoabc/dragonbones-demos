@@ -174,8 +174,8 @@ class Mecha {
   public constructor(scene: Phaser.Scene) {
     this.scene = scene;
 
-    this.scene.add.dragonBones('skin_1502b');
-    this.scene.add.dragonBones('weapon_1000');
+    this.scene.add.dragonbone('skin_1502b');
+    this.scene.add.dragonbone('weapon_1000');
     this._armatureDisplay = this.scene.add.armature('mecha_1502b', 'mecha_1502b');
     this._armatureDisplay.x = this.scene.cameras.main.centerX;
     this._armatureDisplay.y = Game.GROUND;
