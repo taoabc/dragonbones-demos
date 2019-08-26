@@ -3,7 +3,7 @@ module.exports = {
     [
       '@babel/preset-env', {
         targets: {
-          'electron': '5.0.5' // TODO
+          'electron': '6.0.0' // TODO
         }
       }
     ]
