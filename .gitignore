@@ -1,8 +1,7 @@
 # Own
 
 dist/
-
-phaser/dist/
+*/dist/
 
 phaser-umd/dist/
 phaser-umd/libs/

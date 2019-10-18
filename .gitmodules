@@ -4,3 +4,6 @@
 [submodule "libdragonbones"]
 	path = libdragonbones
 	url = https://github.com/taoabc/libdragonbones.git
+[submodule "dragonbones-phaser-ce"]
+	path = dragonbones-phaser-ce
+	url = https://github.com/taoabc/dragonbones-phaser-ce.git

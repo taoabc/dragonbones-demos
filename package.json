@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "build-phaser": "webpack --config phaser/build/webpack.dev.js --watch",
-    "serve-phaser": "serve phaser/dist/",
-    "start": "webpack-dev-server --config phaser/build/webpack.dev.js --progress --colors",
-    "phaser-umd": "tsc -p phaser-umd/ & serve phaser-umd",
-    "lint-phaser": "eslint --ext .js,.ts phaser/src"
+    "start-phaser": "webpack-dev-server --config phaser/build/webpack.dev.js --progress --colors",
+    "lint-phaser": "eslint --ext .js,.ts phaser/src",
+    "build-phaser-ce": "webpack --config phaser-ce/build/webpack.dev.js --watch",
+    "start-phaser-ce": "webpack-dev-server --config phaser-ce/build/webpack.dev.js --progress --colors",
+    "lint-phaser-ce": "eslint --ext .js,.ts phaser-ce/src"
   },
   "keywords": [],
   "author": "",
@@ -31,6 +32,7 @@
   },
   "dependencies": {
     "dragonbones-phaser": "file:dragonbones-phaser",
+    "dragonbones-phaser-ce": "file:dragonbones-phaser-ce",
     "libdragonbones": "file:libdragonbones"
   }
 }
