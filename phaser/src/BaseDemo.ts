@@ -2,7 +2,7 @@
 import { Phaser } from 'dragonbones-phaser';
 export default class BaseDemo extends Phaser.Scene {
 
-    private static BACKGROUND_URL: string = 'resource/background.png';
+    private static BACKGROUND_URL = 'resource/background.png';
 
     preload(): void {
         this.load.image(BaseDemo.BACKGROUND_URL, BaseDemo.BACKGROUND_URL);

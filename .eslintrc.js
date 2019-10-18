@@ -1,13 +1,21 @@
 module.exports = {
-  plugins: ['@typescript-eslint'],
-  extends: [
+	parser: '@typescript-eslint/parser',
+	plugins: ['@typescript-eslint'],
+	extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking'
   ],
+	parserOptions: {
+		ecmaFeatures: {
+			jsx: false
+		},
+		useJSXTextNode: false,
+		project: './tsconfig.json',
+		tsconfigRootDir: './'
+  },
   rules: {
-    indent: "off", // note you must disable the base rule as it can report incorrect errors
-    '@typescript-eslint/indent': ['error', 2],
-    quotes: ['error', 'single']
+    "@typescript-eslint/unbound-method": 0
   }
 }

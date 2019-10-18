@@ -25,7 +25,7 @@ export default class DragHelper {
         displayObject.off('dragend', this._dragStopHandler, this);
     }
 
-    private _dragStartHandler(displayObject: Phaser.GameObjects.GameObject, pointer: Phaser.Input.Pointer, dragX: number, dragY: number): void {
+    private _dragStartHandler(displayObject: Phaser.GameObjects.GameObject, pointer: Phaser.Input.Pointer/* , dragX: number, dragY: number */): void {
         if (this._dragDisplayObject) {
             return;
         }
@@ -52,7 +52,7 @@ export default class DragHelper {
         }
     }
 
-    private _dragStopHandler(pointer: Phaser.Input.Pointer, dragX: number, dragY: number, dropped: boolean): void {
+    private _dragStopHandler(/* pointer: Phaser.Input.Pointer, dragX: number, dragY: number, dropped: boolean */): void {
         if (!this._dragDisplayObject) {
             return;
         }
@@ -61,7 +61,7 @@ export default class DragHelper {
         this._dragDisplayObject = null;
     }
 
-    private _dragHandler(pointer: Phaser.Input.Pointer, localX: number, localY: number): void {
+    private _dragHandler(pointer: Phaser.Input.Pointer/*, localX: number, localY: number*/): void {
         if (!this._dragDisplayObject) {
             return;
         }

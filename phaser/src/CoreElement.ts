@@ -5,13 +5,68 @@ type PointType = Phaser.Math.Vector2;
 type ArmatureDisplayType = dragonBones.phaser.display.ArmatureDisplay;
 type EventType = dragonBones.EventObject;
 
+class Bullet {
+  private _speedX = 0.0;
+  private _speedY = 0.0;
+  private scene: Phaser.Scene;
+
+  private _armatureDisplay: ArmatureDisplayType;
+  private _effecDisplay: ArmatureDisplayType = null;
+
+  public constructor(scene: Phaser.Scene, armatureName: string, effectArmatureName: string, radian: number, speed: number, position: PointType) {
+    this._speedX = Math.cos(radian) * speed;
+    this._speedY = Math.sin(radian) * speed;
+    this.scene = scene;
+
+    this._armatureDisplay = this.scene.add.armature(armatureName, 'mecha_1502b');
+    this._armatureDisplay.x = position.x + Math.random() * 2 - 1;
+    this._armatureDisplay.y = position.y + Math.random() * 2 - 1;
+    this._armatureDisplay.rotation = radian;
+
+    if (effectArmatureName !== null) {
+      this._effecDisplay = this.scene.add.armature(effectArmatureName, 'mecha_1502b');
+      this._effecDisplay.rotation = radian;
+      this._effecDisplay.x = this._armatureDisplay.x;
+      this._effecDisplay.y = this._armatureDisplay.y;
+      this._effecDisplay.scaleX = 1.0 + Math.random() * 1.0;
+      this._effecDisplay.scaleY = 1.0 + Math.random() * 0.5;
+
+      if (Math.random() < 0.5) {
+        this._effecDisplay.scaleY *= -1.0;
+      }
+      this._effecDisplay.animation.play('idle');
+    }
+    this._armatureDisplay.animation.play('idle');
+  }
+
+  public update(): boolean {
+    this._armatureDisplay.x += this._speedX;
+    this._armatureDisplay.y += this._speedY;
+
+    const cx = this.scene.cameras.main.width, cy = this.scene.cameras.main.height;
+    if (
+      this._armatureDisplay.x < -cx - 100.0 || this._armatureDisplay.x > cx + 100.0 ||
+      this._armatureDisplay.y < -cy * 0.5 - 100.0 || this._armatureDisplay.y > cy + 100.0
+    ) {
+      this._armatureDisplay.destroy();
+
+      if (this._effecDisplay !== null)
+        this._effecDisplay.destroy();
+
+      return true;
+    }
+
+    return false;
+  }
+}
+
 export default class Game extends BaseDemo {
   public static GROUND: number;
-  public static G: number = 0.6;
+  public static G = 0.6;
   public static instance: Game;
 
-  private _left: boolean = false;
-  private _right: boolean = false;
+  private _left = false;
+  private _right = false;
   private _player: Mecha;
   private readonly _bullets: Bullet[] = [];
 
@@ -40,10 +95,10 @@ export default class Game extends BaseDemo {
 
     this.createText('Press W/A/S/D to move. Press Q/E/SPACE to switch weapons and skin. Touch to aim and fire.');
 
-    this._player = new Mecha(this);
+    this._player = new Mecha(this); // eslint-disable-line  @typescript-eslint/no-use-before-define
   }
 
-  update(time: number, delta: number): void {
+  update(/*time: number, delta: number*/): void {
     if (this._player) {
       this._player.aim(this.input.x, this.input.y);
       this._player.update();
@@ -145,19 +200,19 @@ class Mecha {
   private static readonly WEAPON_R_LIST: string[] = ['weapon_1502b_r', 'weapon_1005', 'weapon_1005b', 'weapon_1005c', 'weapon_1005d'];
   private static readonly SKINS: string[] = ['mecha_1502b', 'skin_a', 'skin_b', 'skin_c'];
 
-  private _isJumpingA: boolean = false;
-  private _isSquating: boolean = false;
-  private _isAttackingA: boolean = false;
-  private _isAttackingB: boolean = false;
-  private _weaponRIndex: number = 0;
-  private _weaponLIndex: number = 0;
-  private _skinIndex: number = 0;
-  private _faceDir: number = 1;
-  private _aimDir: number = 0;
-  private _moveDir: number = 0;
-  private _aimRadian: number = 0.0;
-  private _speedX: number = 0.0;
-  private _speedY: number = 0.0;
+  private _isJumpingA = false;
+  private _isSquating = false;
+  private _isAttackingA = false;
+  private _isAttackingB = false;
+  private _weaponRIndex = 0;
+  private _weaponLIndex = 0;
+  private _skinIndex = 0;
+  private _faceDir = 1;
+  private _aimDir = 0;
+  private _moveDir = 0;
+  private _aimRadian = 0.0;
+  private _speedX = 0.0;
+  private _speedY = 0.0;
   private _armature: dragonBones.Armature;
   private _armatureDisplay: ArmatureDisplayType;
   private _weaponL: dragonBones.Armature;
@@ -487,60 +542,5 @@ class Mecha {
 
     this._attackState.resetToPose = false;
     this._attackState.autoFadeOutTime = this._attackState.fadeTotalTime;
-  }
-}
-
-class Bullet {
-  private _speedX: number = 0.0;
-  private _speedY: number = 0.0;
-  private scene: Phaser.Scene;
-
-  private _armatureDisplay: ArmatureDisplayType;
-  private _effecDisplay: ArmatureDisplayType = null;
-
-  public constructor(scene: Phaser.Scene, armatureName: string, effectArmatureName: string, radian: number, speed: number, position: PointType) {
-    this._speedX = Math.cos(radian) * speed;
-    this._speedY = Math.sin(radian) * speed;
-    this.scene = scene;
-
-    this._armatureDisplay = this.scene.add.armature(armatureName, 'mecha_1502b');
-    this._armatureDisplay.x = position.x + Math.random() * 2 - 1;
-    this._armatureDisplay.y = position.y + Math.random() * 2 - 1;
-    this._armatureDisplay.rotation = radian;
-
-    if (effectArmatureName !== null) {
-      this._effecDisplay = this.scene.add.armature(effectArmatureName, 'mecha_1502b');
-      this._effecDisplay.rotation = radian;
-      this._effecDisplay.x = this._armatureDisplay.x;
-      this._effecDisplay.y = this._armatureDisplay.y;
-      this._effecDisplay.scaleX = 1.0 + Math.random() * 1.0;
-      this._effecDisplay.scaleY = 1.0 + Math.random() * 0.5;
-
-      if (Math.random() < 0.5) {
-        this._effecDisplay.scaleY *= -1.0;
-      }
-      this._effecDisplay.animation.play('idle');
-    }
-    this._armatureDisplay.animation.play('idle');
-  }
-
-  public update(): boolean {
-    this._armatureDisplay.x += this._speedX;
-    this._armatureDisplay.y += this._speedY;
-
-    const cx = this.scene.cameras.main.width, cy = this.scene.cameras.main.height;
-    if (
-      this._armatureDisplay.x < -cx - 100.0 || this._armatureDisplay.x > cx + 100.0 ||
-      this._armatureDisplay.y < -cy * 0.5 - 100.0 || this._armatureDisplay.y > cy + 100.0
-    ) {
-      this._armatureDisplay.destroy();
-
-      if (this._effecDisplay !== null)
-        this._effecDisplay.destroy();
-
-      return true;
-    }
-
-    return false;
   }
 }

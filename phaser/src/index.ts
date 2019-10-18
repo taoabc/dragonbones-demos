@@ -1,15 +1,15 @@
 import { DragonBonesScenePlugin, Phaser } from 'dragonbones-phaser';
 import HelloDragonBones from './HelloDragonBones';
-import AnimationBase from './AnimationBase';
-import DragonBonesEvent from './DragonBonesEvent';
-import AnimationLayer from './AnimationLayer';
-import BoneOffset from './BoneOffset';
-import InverseKinematics from './InverseKinematics';
-import BoundingBox from './BoundingBox';
-import ReplaceSlotDisplay from './ReplaceSlotDisplay';
-import ReplaceAnimation from './ReplaceAnimation';
-import CoreElementGame from './CoreElement';
-import PerformanceTest from './PerformanceTest';
+// import AnimationBase from './AnimationBase';
+// import DragonBonesEvent from './DragonBonesEvent';
+// import AnimationLayer from './AnimationLayer';
+// import BoneOffset from './BoneOffset';
+// import InverseKinematics from './InverseKinematics';
+// import BoundingBox from './BoundingBox';
+// import ReplaceSlotDisplay from './ReplaceSlotDisplay';
+// import ReplaceAnimation from './ReplaceAnimation';
+// import CoreElementGame from './CoreElement';
+// import PerformanceTest from './PerformanceTest';
 
 const config = {
   version: '1.0',

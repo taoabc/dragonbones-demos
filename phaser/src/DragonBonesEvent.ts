@@ -1,5 +1,4 @@
 import BaseDemo from './BaseDemo';
-import * as dbsPhaser from 'dragonbones-phaser';
 import { dragonBones } from 'dragonbones-phaser';
 
 export default class DragonBonesEvent extends BaseDemo {

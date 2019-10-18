@@ -4,8 +4,8 @@ import BaseDemo from './BaseDemo';
 export default class ReplaceSlotDisplay extends BaseDemo {
     private static readonly WEAPON_RIGHT_LIST: string[] = ['weapon_1004_r', 'weapon_1004b_r', 'weapon_1004c_r', 'weapon_1004d_r', 'weapon_1004e_r'];
 
-    private _leftWeaponIndex: number = 0;
-    private _rightWeaponIndex: number = 0;
+    private _leftWeaponIndex = 0;
+    private _rightWeaponIndex = 0;
     private _factory: Factory = null;
     private _armatureDisplay: dragonBones.phaser.display.ArmatureDisplay;
     private _logoText: Phaser.GameObjects.Text;

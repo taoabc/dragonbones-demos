@@ -41,7 +41,7 @@ export default class AnimationBase extends BaseDemo {
         this.createText('Touch to control animation play progress.');
     }
 
-    private _isTouched: boolean = false;
+    private _isTouched = false;
 
     private _inputDown(): void {
         const progress = dragonBonesPhaser.Phaser.Math.Clamp((this.input.x - this._armatureDisplay.x + 300.0) / 600.0, 0.0, 1.0);

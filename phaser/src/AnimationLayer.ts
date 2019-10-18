@@ -27,7 +27,7 @@ export default class AnimationLayer extends BaseDemo {
         this._armatureDisplay.y = this.cameras.main.centerY + 100.0;
     }
 
-    private _animationEventHandler(event: dragonBones.EventObject): void {
+    private _animationEventHandler(/* event: dragonBones.EventObject */): void {
         let attackState = this._armatureDisplay.animation.getState('attack_01');
         if (!attackState) {
             attackState = this._armatureDisplay.animation.fadeIn('attack_01', 0.1, 1, 1);

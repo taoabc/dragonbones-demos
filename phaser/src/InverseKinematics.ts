@@ -3,9 +3,9 @@ import BaseDemo from './BaseDemo';
 import DragHelper from './DragHelper';
 
 export default class InverseKinematics extends BaseDemo {
-    private _faceDir: number = 0;
-    private _aimRadian: number = 0.0;
-    private _offsetRotation: number = 0.0;
+    private _faceDir = 0;
+    private _aimRadian = 0.0;
+    private _offsetRotation = 0.0;
     private readonly _target: Phaser.Math.Vector2 = new Phaser.Math.Vector2();
     private _armatureDisplay: dragonBones.phaser.display.ArmatureDisplay;
     private _floorBoard: dragonBones.phaser.display.ArmatureDisplay;
@@ -64,7 +64,7 @@ export default class InverseKinematics extends BaseDemo {
         this.createText('Touch and drag the red circle to modify the IK bones.');
     }
 
-    update(time: number, delta: number): void {
+    update(/* time: number, delta: number */): void {
         if (!this._floorBoard) {
             return;
         }

@@ -74,7 +74,7 @@ export default class BoundingBox extends BaseDemo {
         this.createText('Touch to drag bounding box tester.');
     }
 
-    update(time: number, delta: number): void {
+    update(/* time: number, delta: number */): void {
         if (!this._armatureDisplay)
             return;
 

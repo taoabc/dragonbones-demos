@@ -2,8 +2,8 @@ import { dragonBones, Phaser } from 'dragonbones-phaser';
 import BaseDemo from './BaseDemo';
 
 export default class PerformanceTest extends BaseDemo {
-    private _addingArmature: boolean = false;
-    private _removingArmature: boolean = false;
+    private _addingArmature = false;
+    private _removingArmature = false;
     private readonly _armatures: Array<dragonBones.phaser.display.ArmatureDisplay> = [];
     private _text: Phaser.GameObjects.Text;
     private _perfText: Phaser.GameObjects.Text;
@@ -46,7 +46,7 @@ export default class PerformanceTest extends BaseDemo {
         this._updateText();
     }
 
-    update(time: number, delta: number): void {
+    update(/* time: number, delta: number */): void {
         if (this._addingArmature) {
             for (let i = 0; i < 10; ++i) {
                 this._addArmature();
