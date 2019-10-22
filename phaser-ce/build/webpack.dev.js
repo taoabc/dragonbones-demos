@@ -9,7 +9,7 @@ module.exports = {
   mode: 'development',
 
   entry: {
-    'app': path.resolve(__dirname, '../src/index.ts'),
+    app: path.resolve(__dirname, '../src/index.ts')
     // 'dragonbones-phaser.min': path.resolve(__dirname, '../src/index.ts'),
   },
 
@@ -18,12 +18,12 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js'],
     alias: {
       'dragonbones-phaser-ce': path.resolve(__dirname, '../../dragonbones-phaser-ce/src'),
-      'libdragonbones': path.resolve(__dirname, '../../libdragonbones/src'),
+      libdragonbones: path.resolve(__dirname, '../../libdragonbones/src')
     }
   },
 
   output: {
-    path: path.resolve(__dirname, '../dist/'),
+    path: path.resolve(__dirname, '../dist/')
   },
 
   module: {
@@ -39,7 +39,7 @@ module.exports = {
           }
         ]
       },
-      { test: /\.js$/, use: ['babel-loader'] },
+      { test: /\.js$/, use: ['babel-loader'] }
     ]
   },
 
@@ -51,9 +51,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: `${__dirname}/../template.html`
     }),
-    new CopyWebpackPlugin([
-      { from: `${__dirname}/../../dragonbones-resource/`, to: 'resource/' }
-    ]),
+    new CopyWebpackPlugin([{ from: `${__dirname}/../../dragonbones-resource/`, to: 'resource/' }])
   ],
 
   devServer: {
@@ -62,4 +60,4 @@ module.exports = {
     // compress: true,
     // port: 9000
   }
-}
+};

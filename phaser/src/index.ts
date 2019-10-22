@@ -15,24 +15,24 @@ const config = {
   version: '1.0',
 
   // canvas: document.createElement('CANVAS'),
-  width: 1000,
-  height: 640,
+  width: 1920,
+  height: 1080,
   backgroundColor: 0x0,
 
   render: {
-      pixelArt: false,
-      clearBeforeRender: false
+    pixelArt: false,
+    clearBeforeRender: false
   },
 
   disableContextMenu: true,
 
   plugins: {
-      scene: [
-          { key: 'DragonBones', plugin: DragonBonesScenePlugin, mapping: 'dragonbone' }    // setup DB scene plugin
-      ]
+    scene: [
+      { key: 'DragonBones', plugin: DragonBonesScenePlugin, mapping: 'dragonbone' } // setup DB scene plugin
+    ]
   },
 
-  scene: HelloDragonBones    // scene to display
+  scene: HelloDragonBones // scene to display
   // scene: AnimationBase
   // scene: DragonBonesEvent
   // scene: AnimationLayer

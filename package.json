@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build-phaser": "webpack --config phaser/build/webpack.dev.js --watch",
-    "start-phaser": "webpack-dev-server --config phaser/build/webpack.dev.js --progress --colors",
+    "start-phaser": "webpack-dev-server --config phaser/build/webpack.dev.js --progress --colors --open",
     "lint-phaser": "eslint --ext .js,.ts phaser/src",
     "build-phaser-ce": "webpack --config phaser-ce/build/webpack.dev.js --watch",
-    "start-phaser-ce": "webpack-dev-server --config phaser-ce/build/webpack.dev.js --progress --colors",
+    "start-phaser-ce": "webpack-dev-server --config phaser-ce/build/webpack.dev.js --progress --colors --open",
     "lint-phaser-ce": "eslint --ext .js,.ts phaser-ce/src"
   },
   "keywords": [],
